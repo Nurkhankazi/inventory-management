@@ -2,6 +2,13 @@ import React from 'react';
 import Header from './include/header';
 import Sidebar from './include/sidebar';
 import Footer from './include/footer';
+import './assets/vendor/css/core.css';
+import './assets/vendor/css/theme-default.css';
+import './assets/css/demo.css';
+import './assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css';
+import './assets/vendor/libs/apex-charts/apex-charts.css';
+
+
 
 function AdminLayout({children}) {
   return (

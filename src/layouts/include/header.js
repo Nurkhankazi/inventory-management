@@ -1,6 +1,23 @@
 import React from 'react'
+import { Link,useLocation } from 'react-router-dom'
 
 function Header(){
+            const activeMenu=(e)=>{
+              document.querySelectorAll('.submenu').forEach(
+                  function(e){
+                      e.classList.remove('active');
+                  }
+              )
+              const childElement = e.target.parentElement.querySelector('.submenu');
+              if(childElement && childElement.classList.contains('submenu')){
+                  childElement.classList.add('active');
+              }
+          }
+
+          const location = useLocation();
+          const isLinkActive = (path)=>{
+              return location.pathname == path ? 'active' : "";
+          }
     return(
         <>
             {/* Navbar */}
@@ -91,12 +108,13 @@ function Header(){
                     <li>
                       <div className="dropdown-divider"></div>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="javascript:void(0);">
-                        <i className="bx bx-power-off me-2"></i>
-                        <span className="align-middle">Log Out</span>
-                      </a>
+                    <li onClick={activeMenu}s className={`sidebar-item ${isLinkActive("/Login")}`}>
+                      <Link to={"/Login"} className={`sidebar-link`}>
+                        <i data-feather="home" width="20"></i> 
+                        <span>Logout</span>
+                      </Link>
                     </li>
+                    
                   </ul>
                 </li>
                 {/*/ User */}
