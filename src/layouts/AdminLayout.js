@@ -2,40 +2,20 @@ import React from 'react';
 import Header from './include/header';
 import Sidebar from './include/sidebar';
 import Footer from './include/footer';
-import './assets/vendor/css/core.css';
-import './assets/vendor/css/theme-default.css';
-import './assets/css/demo.css';
-import './assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css';
-import './assets/vendor/libs/apex-charts/apex-charts.css';
-
-
+import './assets_admin/css/bootstrap.css';
+import './assets_admin/css/app.css';
+// import 'font-awesome/css/font-awesome.min.css';
 
 function AdminLayout({children}) {
   return (
-    <>
-      <div className="layout-wrapper layout-content-navbar">
-        <div className="layout-container">
-          <Sidebar/>
-          {/* Layout container */}
-          <div className="layout-page">
+    <div id="app">
+        <Sidebar />
+        <div id="main">
             <Header />
-            <div className="content-wrapper">
-              <main>{children}</main>
-              <Footer />
-              <div className="content-backdrop fade"></div>
-            </div>
-          </div>
+            <main>{children}</main>
+            <Footer />
         </div>
-        <div className="layout-overlay layout-menu-toggle"></div>
-      </div>
-      <div className="buy-now">
-        <a
-          href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/"
-          target="_blank"
-          className="btn btn-danger btn-buy-now">Upgrade to Pro
-        </a>
-      </div>
-    </>
+    </div>
   )
 }
 
