@@ -2,7 +2,7 @@ import axios from 'axios';
 import {useNavigate } from "react-router-dom";
 
 const login = async (data) => {
-    const LOGIN_ENDPOINT = `http://localhost/hms_api/login.php`;
+    const LOGIN_ENDPOINT = `http://localhost/inventory/login.php`;
     try{
         let response = await axios.post(LOGIN_ENDPOINT, data);
         if(response.data.jwt){
@@ -18,7 +18,7 @@ const login = async (data) => {
     }
 }
 const register = async (data)=> {
-    const SIGNUP_ENDPOINT = `http://localhost/hms_api/register.php`;
+    const SIGNUP_ENDPOINT = `http://localhost/inventory/register.php`;
     try{
         let response= await axios({
             method: 'post',

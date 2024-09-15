@@ -1,6 +1,9 @@
 import React from 'react';
-import './assets_admin/css/bootstrap.css';
-import './assets_admin/css/app.css';
+import './assets/vendor/css/core.css';
+import './assets/vendor/css/theme-default.css';
+import './assets/css/demo.css';
+import './assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css';
+import './assets/vendor/libs/apex-charts/apex-charts.css';
 
 function AuthLayout({children}) {
   return (

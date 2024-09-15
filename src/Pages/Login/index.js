@@ -13,10 +13,11 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         let check = await login(inputs);
-        if(check)
-            navigate('/');
-        else
+        if(check){
+            window.location="http://localhost:3000/"
+        }else{
             alert("Sorry password or email address is wrong!");
+        }
     }
   return (
     <AuthLayout>
