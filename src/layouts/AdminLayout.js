@@ -12,19 +12,19 @@ import './assets/vendor/libs/apex-charts/apex-charts.css';
 
 function AdminLayout({children}) {
   return (
-    <div class="layout-wrapper layout-content-navbar">
-      <div class="layout-container">
+    <div className="layout-wrapper layout-content-navbar">
+      <div className="layout-container">
           <Sidebar />
-          <div class="layout-page">
+          <div className="layout-page">
             <Header />
-            <div class="content-wrapper">
+            <div className="content-wrapper">
             <main>{children}</main>
             <Footer />
-            <div class="content-backdrop fade"></div>
+            <div className="content-backdrop fade"></div>
             </div>
           </div>
       </div>
-      <div class="layout-overlay layout-menu-toggle"></div>
+      <div className="layout-overlay layout-menu-toggle"></div>
     </div>
   )
 }

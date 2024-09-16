@@ -96,7 +96,7 @@ function Header() {
                       <div className="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="javascript:void(0);">
+                      <a className="dropdown-item" href="/login">
                         <i className="bx bx-power-off me-2"></i>
                         <span className="align-middle">Log Out</span>
                       </a>
