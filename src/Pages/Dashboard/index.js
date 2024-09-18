@@ -231,8 +231,7 @@ function Dashboard() {
                               </div>
                               <div className="mt-sm-auto">
                                 <small className="text-success text-nowrap fw-medium"
-                                  ><i className="bx bx-chevron-up"></i> 68.2%</small
-                                >
+                                  ><i className="bx bx-chevron-up"></i> 68.2%</small>
                                 <h3 className="mb-0">$84,686k</h3>
                               </div>
                             </div>
@@ -281,9 +280,9 @@ function Dashboard() {
                       <ul className="p-0 m-0">
                         <li className="d-flex mb-4 pb-1">
                           <div className="avatar flex-shrink-0 me-3">
-                            <span className="avatar-initial rounded bg-label-primary"
-                              ><i className="bx bx-mobile-alt"></i
-                            ></span>
+                            <span className="avatar-initial rounded bg-label-primary">
+                              <i className="bx bx-mobile-alt"></i>
+                            </span>
                           </div>
                           <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div className="me-2">
@@ -325,9 +324,9 @@ function Dashboard() {
                         </li>
                         <li className="d-flex">
                           <div className="avatar flex-shrink-0 me-3">
-                            <span className="avatar-initial rounded bg-label-secondary"
-                              ><i className="bx bx-football"></i
-                            ></span>
+                            <span className="avatar-initial rounded bg-label-secondary">
+                              <i className="bx bx-football"></i>
+                              </span>
                           </div>
                           <div className="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div className="me-2">
