@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link,useLocation } from 'react-router-dom'
+import { Link,useLocation, } from 'react-router-dom'
 function Sidebar() {
 
 	const activeMenu=(e)=>{
@@ -83,478 +83,216 @@ function Sidebar() {
 
           <ul className="menu-inner py-1">
          
+            
             <li className="menu-item active open">
               <a href="javascript:void(0);" className="menu-link menu-toggle">
                 <i className="menu-icon tf-icons bx bx-home-circle"></i>
-                <div data-i18n="Dashboards">Dashboards</div>
-              </a>
-{/*               
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/dashboards-crm.html"
-                    target="_blank"
-                    className="menu-link">
-                    <div data-i18n="CRM">CRM</div>
-                    <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li className="menu-item active">
-                  <a href="index.html" className="menu-link">
-                    <div data-i18n="Analytics">Analytics</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-ecommerce-dashboard.html"
-                    target="_blank"
-                    className="menu-link">
-                    <div data-i18n="eCommerce">eCommerce</div>
-                    <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-logistics-dashboard.html"
-                    target="_blank"
-                    className="menu-link">
-                    <div data-i18n="Logistics">Logistics</div>
-                    <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-academy-dashboard.html"
-                    target="_blank"
-                    className="menu-link">
-                    <div data-i18n="Academy">Academy</div>
-                    <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-                  </a>
-                </li>
-              </ul> */}
-            </li>
-{/* 
-            <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
-              </a>
-
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="layouts-without-menu.html" className="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="layouts-without-navbar.html" className="menu-link">
-                    <div data-i18n="Without navbar">Without navbar</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="layouts-container.html" className="menu-link">
-                    <div data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="layouts-fluid.html" className="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="layouts-blank.html" className="menu-link">
-                    <div data-i18n="Blank">Blank</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-store"></i>
-                <div data-i18n="Front Pages">Front Pages</div>
-                <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/landing-page.html"
-                    className="menu-link"
-                    target="_blank">
-                    <div data-i18n="Landing">Landing</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/pricing-page.html"
-                    className="menu-link"
-                    target="_blank">
-                    <div data-i18n="Pricing">Pricing</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/payment-page.html"
-                    className="menu-link"
-                    target="_blank">
-                    <div data-i18n="Payment">Payment</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/checkout-page.html"
-                    className="menu-link"
-                    target="_blank">
-                    <div data-i18n="Checkout">Checkout</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a
-                    href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/front-pages/help-center-landing.html"
-                    className="menu-link"
-                    target="_blank">
-                    <div data-i18n="Help Center">Help Center</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li className="menu-header small text-uppercase">
-              <span className="menu-header-text">Apps &amp; Pages</span>
-            </li>
-        
-            <li className="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-email.html"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-envelope"></i>
-                <div data-i18n="Email">Email</div>
-                <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-chat"></i>
-                <div data-i18n="Chat">Chat</div>
-                <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-calendar"></i>
-                <div data-i18n="Calendar">Calendar</div>
-                <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li className="menu-item">
-              <a
-                href="https://demos.themeselection.com/sneat-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-grid"></i>
-                <div data-i18n="Kanban">Kanban</div>
-                <div className="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-        
-            <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="pages-account-settings-account.html" className="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="pages-account-settings-notifications.html" className="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="pages-account-settings-connections.html" className="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-lock-open-alt"></i>
-                <div data-i18n="Authentications">Authentications</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="auth-login-basic.html" className="menu-link" target="_blank">
-                    <div data-i18n="Basic">Login</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="auth-register-basic.html" className="menu-link" target="_blank">
-                    <div data-i18n="Basic">Register</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="auth-forgot-password-basic.html" className="menu-link" target="_blank">
-                    <div data-i18n="Basic">Forgot Password</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="pages-misc-error.html" className="menu-link">
-                    <div data-i18n="Error">Error</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="pages-misc-under-maintenance.html" className="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-           
-            <li className="menu-header small text-uppercase"><span className="menu-header-text">Components</span></li>
-           
-            <li className="menu-item">
-              <a href="cards-basic.html" className="menu-link">
-                <i className="menu-icon tf-icons bx bx-collection"></i>
-                <div data-i18n="Basic">Cards</div>
-              </a>
-            </li>
-          
-            <li className="menu-item">
-              <a href="javascript:void(0)" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-box"></i>
-                <div data-i18n="User interface">User interface</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="ui-accordion.html" className="menu-link">
-                    <div data-i18n="Accordion">Accordion</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-alerts.html" className="menu-link">
-                    <div data-i18n="Alerts">Alerts</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-badges.html" className="menu-link">
-                    <div data-i18n="Badges">Badges</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-buttons.html" className="menu-link">
-                    <div data-i18n="Buttons">Buttons</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-carousel.html" className="menu-link">
-                    <div data-i18n="Carousel">Carousel</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-collapse.html" className="menu-link">
-                    <div data-i18n="Collapse">Collapse</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-dropdowns.html" className="menu-link">
-                    <div data-i18n="Dropdowns">Dropdowns</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-footer.html" className="menu-link">
-                    <div data-i18n="Footer">Footer</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-list-groups.html" className="menu-link">
-                    <div data-i18n="List Groups">List groups</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-modals.html" className="menu-link">
-                    <div data-i18n="Modals">Modals</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-navbar.html" className="menu-link">
-                    <div data-i18n="Navbar">Navbar</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-offcanvas.html" className="menu-link">
-                    <div data-i18n="Offcanvas">Offcanvas</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-pagination-breadcrumbs.html" className="menu-link">
-                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-progress.html" className="menu-link">
-                    <div data-i18n="Progress">Progress</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-spinners.html" className="menu-link">
-                    <div data-i18n="Spinners">Spinners</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-tabs-pills.html" className="menu-link">
-                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-toasts.html" className="menu-link">
-                    <div data-i18n="Toasts">Toasts</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-tooltips-popovers.html" className="menu-link">
-                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="ui-typography.html" className="menu-link">
-                    <div data-i18n="Typography">Typography</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-         
-            <li className="menu-item">
-              <a href="javascript:void(0)" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-copy"></i>
-                <div data-i18n="Extended UI">Extended UI</div>
-              </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="extended-ui-perfect-scrollbar.html" className="menu-link">
-                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="extended-ui-text-divider.html" className="menu-link">
-                    <div data-i18n="Text Divider">Text Divider</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li className="menu-item">
-              <a href="icons-boxicons.html" className="menu-link">
-                <i className="menu-icon tf-icons bx bx-crown"></i>
-                <div data-i18n="Boxicons">Boxicons</div>
+                <div data-i18n="Dashboards">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Dashboard") ? 'active' : ''}`}>
+                    <Link to="/" className="sidebar-link nav-link">Dashboard
+                    </Link>
+                  </li>
+                </div>
               </a>
             </li>
 
-       
-            <li className="menu-header small text-uppercase"><span className="menu-header-text">Forms &amp; Tables</span></li>
-         */}
             <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Products" aria-expanded="false" aria-controls="Products">
                 <i className="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Elements">Products</div>
+                <span className="menu-title">Products</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="forms-basic-inputs.html" className="menu-link">
-                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="forms-input-groups.html" className="menu-link">
-                    <div data-i18n="Input groups">Input groups</div>
-                  </a>
-                </li>
-              </ul>
-            </li> 
+              <div className="collapse" id="Products">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Addproduct") ? 'active' : ''}`}>
+                    <Link to="/Products_Add" className="sidebar-link nav-link">
+                        <span className="menu-title">Product Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Products_list") ? 'active' : ''}`}>
+                    <Link to="/Products_list" className="sidebar-link nav-link">
+                        <span className="menu-title">Product list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Categories") ? 'active' : ''}`}>
+                    <Link to="/Categories" className="sidebar-link nav-link">
+                        <span className="menu-title">Product Categories</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
             <li className="menu-item">
-              <a href="javascript:void(0);" className="menu-link menu-toggle">
-                <i className="menu-icon tf-icons bx bx-detail"></i>
-                <div data-i18n="Form Layouts">Categories</div>
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Orders" aria-expanded="false" aria-controls="Orders">
+              <i className="menu-icon tf-icons bx bx-list-check"></i>
+                <span className="Form Validation">Orders</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <ul className="menu-sub">
-                <li className="menu-item">
-                  <a href="form-layouts-vertical.html" className="menu-link">
-                    <div data-i18n="Vertical Form">Vertical Form</div>
-                  </a>
-                </li>
-                <li className="menu-item">
-                  <a href="form-layouts-horizontal.html" className="menu-link">
-                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                  </a>
-                </li>
-              </ul>
-            </li> 
-          
-            <li className="menu-item">
-              <a
-                href="javascript:void(0);"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-list-check"></i>
-                <div data-i18n="Form Validation">Orders</div>
-              </a>
+              <div className="collapse" id="Orders">
+                <ul className="nav flex-column sub-menu">
+                <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Order_Add") ? 'active' : ''}`}>
+                    <Link to="/Order_Add" className="sidebar-link nav-link">
+                        <span className="menu-title">Order Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Order_list") ? 'active' : ''}`}>
+                    <Link to="/Order_list" className="sidebar-link nav-link">
+                        <span className="menu-title">Order list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Order_history") ? 'active' : ''}`}>
+                    <Link to="/Order_history" className="sidebar-link nav-link">
+                        <span className="menu-title">Order history</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  
+                </ul>
+              </div>
             </li>
-           
+
             <li className="menu-item">
-              <a href="tables-basic.html" className="menu-link">
-                <i className="menu-icon tf-icons bx bx-table"></i>
-                <div data-i18n="Tables">Users</div>
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Suppliers" aria-expanded="false" aria-controls="Suppliers">
+              <i className="menu-icon tf-icons bx bx-detail"></i>
+                <span className="Form Layouts">Suppliers</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
+              <div className="collapse" id="Suppliers">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Supplier_Add") ? 'active' : ''}`}>
+                    <Link to="/Supplier_Add" className="sidebar-link nav-link">
+                        <span className="menu-title">Supplier Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Supplier_View") ? 'active' : ''}`}>
+                    <Link to="/Supplier_View" className="sidebar-link nav-link">
+                        <span className="menu-title">Supplier view</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
-           
+
             <li className="menu-item">
-              <a
-                href="javascript:void(0);"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-grid"></i>
-                <div data-i18n="Datatables">Inventory</div>
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Inventory" aria-expanded="false" aria-controls="Inventory">
+              <i className="menu-icon tf-icons bx bx-grid"></i>
+                <span className="Datatables">Inventory</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
+              <div className="collapse" id="Inventory">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Stock_levels") ? 'active' : ''}`}>
+                    <Link to="/Stock_levels" className="sidebar-link nav-link">
+                        <span className="menu-title">Stock levels</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Stock_Adjustment") ? 'active' : ''}`}>
+                    <Link to="/Stock_Adjustment" className="sidebar-link nav-link">
+                        <span className="menu-title">Stock Adjustment</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
-           
+
             <li className="menu-item">
-              <a
-                href="javascript:void(0);"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-support"></i>
-                <div data-i18n="Support">Report</div>
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Users" aria-expanded="false" aria-controls="Users">
+              <i className="menu-icon tf-icons bx bx-table"></i>
+                <span className="Tables">Users</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
+              <div className="collapse" id="Users">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_Add") ? 'active' : ''}`}>
+                    <Link to="/User_Add" className="sidebar-link nav-link">
+                        <span className="menu-title">User Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_list") ? 'active' : ''}`}>
+                    <Link to="/User_list" className="sidebar-link nav-link">
+                        <span className="menu-title">User list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
+            
             <li className="menu-item">
-              <a
-                href="javascript:void(0);"
-                target="_blank"
-                className="menu-link">
-                <i className="menu-icon tf-icons bx bx-file"></i>
-                <div data-i18n="Documentation">Settings</div>
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Report" aria-expanded="false" aria-controls="Report">
+              <i className="menu-icon tf-icons bx bx-support"></i>
+              <span className="Support">Report</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
+              <div className="collapse" id="Report">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Seles_report") ? 'active' : ''}`}>
+                    <Link to="/Seles_report" className="sidebar-link nav-link">
+                        <span className="menu-title">Sales Report</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Supplier_reports") ? 'active' : ''}`}>
+                    <Link to="/Supplier_reports" className="sidebar-link nav-link">
+                        <span className="menu-title">Supplier Reports</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </li>
+
+            <li className="menu-item">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Settings" aria-expanded="false" aria-controls="Settings">
+              <i className="menu-icon tf-icons bx bx-file"></i>
+              <span className="Documentation">Settings</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div className="collapse" id="Settings">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_management") ? 'active' : ''}`}>
+                    <Link to="/User_management" className="sidebar-link nav-link">
+                        <span className="menu-title">User Management</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Notifications") ? 'active' : ''}`}>
+                    <Link to="/Notifications" className="sidebar-link nav-link">
+                        <span className="menu-title">Notifications</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
           </ul>
         </aside>
   )
