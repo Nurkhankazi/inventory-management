@@ -19,7 +19,7 @@ function Sidebar() {
         return location.pathname == path ? 'active' : "";
     }
   return (
-	<aside id="layout-menu" className="layout-menu menu-vertical menu bg-menu-theme">
+	<aside id="layout-menu" className="layout-menu menu-vertical menu bg-menu-theme" style={{textAlign: 'center', fontWeight: 'bold'}}>
           <div className="app-brand demo">
             <a href="index.html" className="app-brand-link">
               <span className="app-brand-logo demo">

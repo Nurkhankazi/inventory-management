@@ -1,6 +1,6 @@
 import React from 'react'
 import { logout } from '../../Api/AllApi'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 
 function Header() {
     const navigate=useNavigate();
@@ -8,6 +8,22 @@ function Header() {
         logout();
         navigate('/login');
     }
+    const activeMenu=(e)=>{
+      document.querySelectorAll('.submenu').forEach(
+          function(e){
+              e.classList.remove('active');
+          }
+      )
+      const childElement = e.target.parentElement.querySelector('.submenu');
+      if(childElement && childElement.classList.contains('submenu')){
+          childElement.classList.add('active');
+      }
+  }
+
+const location = useLocation();
+const isLinkActive = (path)=>{
+      return location.pathname == path ? 'active' : "";
+  }
   return (
     <nav
             className="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
@@ -95,12 +111,13 @@ function Header() {
                     <li>
                       <div className="dropdown-divider"></div>
                     </li>
-                    <li>
-                      <a className="dropdown-item" href="/login">
-                        <i className="bx bx-power-off me-2"></i>
-                        <span className="align-middle">Log Out</span>
-                      </a>
-                    </li>
+                    
+                    {<li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Login")}`}>
+                        <Link to="/Login" className="dropdown-item" onClick={handelLogout}>
+                            <i className="bx bx-power-off me-2"></i>
+                            <span className="align-middle" style={{fontWeight: 'bold'}}>Logout</span>
+                        </Link>
+                    </li>}
                   </ul>
                 </li>
                 {/*/ User */}

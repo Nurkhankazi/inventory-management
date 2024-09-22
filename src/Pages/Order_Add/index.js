@@ -24,6 +24,11 @@ function Order_Add() {
         </div>
 
         <div class="mb-3">
+            <label for="orderPrice" class="form-label">Price</label>
+            <input type="number" class="form-control" id="orderPrice" min="1" required/>
+        </div>
+
+        <div class="mb-3">
             <label for="orderNotes" class="form-label">Additional Notes</label>
             <textarea class="form-control" id="orderNotes" rows="3"></textarea>
         </div>
