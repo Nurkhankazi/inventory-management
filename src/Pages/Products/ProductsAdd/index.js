@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AdminLayout from '../../layouts/AdminLayout';
+import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function Addproduct() {
-    const [inputs, setInputs] = useState({addproduct:'',description:'',quantity:'',price:'',category:''});
+    const [inputs, setInputs] = useState({id:'',addproduct:'',description:'',quantity:'',price:'',category:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -34,9 +34,9 @@ function Addproduct() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/add_products/${inputs.id}`;
+                apiurl=`/addproducts/${inputs.id}`;
             }else{
-                apiurl=`/add_products/create`;
+                apiurl=`/addproducts/create`;
             }
             
             let response= await axios({
@@ -45,7 +45,7 @@ function Addproduct() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/add_products')
+            navigate('/addproducts')
         } 
         catch(e){
             console.log(e);

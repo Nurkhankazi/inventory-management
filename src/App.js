@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Dashboard from './pages/Dashboard';
-import Products_Add from './pages/Products_Add';
-import Products_list from './pages/Products_list';
+import Products from './pages/Products';
+import ProductsAdd from './pages/Products/ProductsAdd';
+// import Products_list from './pages/Products_list';
 import Categories from './pages/Categories';
 import Order_list from './pages/Order_list';
 import Order_Add from './pages/Order_Add';
@@ -31,8 +32,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/Products_Add" element={<Products_Add />} />
-          <Route path="/Products_list" element={<Products_list />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Products/add" element={<ProductsAdd />} />
+          <Route path="/Products/edit/:id" element={<ProductsAdd />} />
+          {/* <Route path="/Products_list" element={<Products_list />} /> */}
           <Route path="/Categories" element={<Categories />} />
           <Route path="/Order_list" element={<Order_list />} />
           <Route path="/Order_Add" element={<Order_Add />} />
