@@ -104,15 +104,15 @@ function Sidebar() {
               </a>
               <div className="collapse" id="Products">
                 <ul className="nav flex-column sub-menu">
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Product/add") ? 'active' : ''}`}>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/products/add") ? 'active' : ''}`}>
                     <Link to="/Products/add" className="sidebar-link nav-link">
                         <span className="menu-title">Product Add</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         
                     </Link>
                   </li>
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Products_list") ? 'active' : ''}`}>
-                    <Link to="/Products" className="sidebar-link nav-link">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/products") ? 'active' : ''}`}>
+                    <Link to="/products" className="sidebar-link nav-link">
                         <span className="menu-title">Product list</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         

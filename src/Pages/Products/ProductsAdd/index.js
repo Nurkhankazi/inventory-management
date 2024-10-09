@@ -10,6 +10,7 @@ function Addproduct() {
     const {id} = useParams();
     
     function getDatas(){
+        //api from laravel
         axios.get(`${process.env.REACT_APP_API_URL}/addproduct/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
@@ -34,9 +35,9 @@ function Addproduct() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/addproducts/${inputs.id}`;
+                apiurl=`/addproduct/edit/${inputs.id}`;//api from laravel
             }else{
-                apiurl=`/addproducts/create`;
+                apiurl=`/addproduct/create`;//api from laravel
             }
             
             let response= await axios({
@@ -45,7 +46,7 @@ function Addproduct() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/addproducts')
+            navigate('/products');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -57,16 +58,9 @@ function Addproduct() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Add New Product</h3>
+                        <br/><h3>Add New Product</h3>
                     </div>
-                    <div className="col-12 col-md-6 order-md-2 order-first">
-                        <nav aria-label="breadcrumb" className='breadcrumb-header'>
-                            <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li className="breadcrumb-item active" aria-current="page">Add New</li>
-                            </ol>
-                        </nav>
-                    </div>
+                   
                 </div>
             </div>
 
@@ -82,31 +76,31 @@ function Addproduct() {
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="first-name-vertical">Add Product</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.Add_Product} name="name" onChange={handleChange} placeholder="Add Product"/>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.addproduct} name="addproduct" onChange={handleChange} placeholder="Add Product"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">description</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.description} name="designation_id" onChange={handleChange} placeholder="description"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.description} name="description" onChange={handleChange} placeholder="description"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">quantity</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.quantity} name="department_id" onChange={handleChange} placeholder="quantity"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.quantity} name="quantity" onChange={handleChange} placeholder="quantity"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">price</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.price} name="specialist" onChange={handleChange} placeholder="price"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.price} name="price" onChange={handleChange} placeholder="price"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
                                                     <label for="email-id-vertical">category</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.category} name="education" onChange={handleChange} placeholder="category"/>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.category} name="category" onChange={handleChange} placeholder="category"/>
                                                     </div>
                                                 </div>
                                                 

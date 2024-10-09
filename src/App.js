@@ -32,9 +32,9 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/Products" element={<Products />} />
-          <Route path="/Products/add" element={<ProductsAdd />} />
-          <Route path="/Products/edit/:id" element={<ProductsAdd />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/add" element={<ProductsAdd />} />
+          <Route path="/products/edit/:id" element={<ProductsAdd />} />
           {/* <Route path="/Products_list" element={<Products_list />} /> */}
           <Route path="/Categories" element={<Categories />} />
           <Route path="/Order_list" element={<Order_list />} />
