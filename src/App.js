@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import ProductsAdd from './pages/Products/ProductsAdd';
-// import Products_list from './pages/Products_list';
 import Categories from './pages/Categories';
-import Order_list from './pages/Order_list';
-import Order_Add from './pages/Order_Add';
+import Order from './pages/Order';
+import OrderAdd from './pages/Order/OrderAdd';
 import Order_history from './pages/Order_history';
 import Supplier_Add from './pages/Supplier_Add';
 import Supplier_View from './pages/Supplier_View';
@@ -37,8 +36,9 @@ function App() {
           <Route path="/products/edit/:id" element={<ProductsAdd />} />
           {/* <Route path="/Products_list" element={<Products_list />} /> */}
           <Route path="/Categories" element={<Categories />} />
-          <Route path="/Order_list" element={<Order_list />} />
-          <Route path="/Order_Add" element={<Order_Add />} />
+          <Route path="/order" element={<Order />} />
+          <Route path="/order/add" element={<OrderAdd />} />
+          <Route path="/order/edit/:id" element={<OrderAdd />} />
           <Route path="/Order_history" element={<Order_history />} />
           <Route path="/Supplier_Add" element={<Supplier_Add />} />
           <Route path="/Supplier_View" element={<Supplier_View />} />

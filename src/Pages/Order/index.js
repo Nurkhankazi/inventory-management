@@ -3,19 +3,19 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Products() {
+function Order() {
     const[data, setData]=useState([]);
     useEffect(() => {
         getDatas();
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/addproduct`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/order`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/addproduct/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/order/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -24,16 +24,8 @@ function Products() {
         <div className="main-content container-fluid">
             <div className="page-title">
                 <div className="row">
-                    <div className="col-12 col-md-6 order-md-1 order-last">
-                        <h3>Product</h3>
-                    </div>
-                    <div className="col-12 col-md-6 order-md-2 order-first">
-                        <nav aria-label="breadcrumb" className='breadcrumb-header'>
-                            <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li className="breadcrumb-item active" aria-current="page">List</li>
-                            </ol>
-                        </nav>
+                    <div className="col-12 col-md-12 order-md-1 order-last">
+                        <br/><h1 style={{textAlign: 'center'}}>Order List</h1>
                     </div>
                 </div>
             </div>
@@ -42,32 +34,33 @@ function Products() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Product</h4>
-                            <Link to={'/products/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Order</h4>
+                            <Link to={'/order/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
-                                            <th>addproduct</th>
-                                            <th>description</th>
-                                            <th>quantity</th>
-                                            <th>price</th>
-                                            <th>category</th>
+                                            <th>order item</th>
+                                            <th>order quantity</th>
+                                            <th>order price</th>
+                                            <th>order notes</th>
+                                            <th>order date</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                            
-                                            <td>{d.addproduct}</td>
-                                            <td>{d.description}</td>
-                                            <td>{d.quantity}</td>
-                                            <td>{d.price}</td>
-                                            <td>{d.category}</td>
-                                            <td>
-                                                <Link to={`/products/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                            <td>{d.orderitem}</td>
+                                            <td>{d.orderquantity}</td>
+                                            <td>{d.orderprice}</td>
+                                            <td>{d.ordernotes}</td>
+                                            <td>{d.orderdate}</td>
+                                           <td>
+                                                <Link to={`/order/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -85,4 +78,4 @@ function Products() {
   )
 }
 
-export default Products
+export default Order
