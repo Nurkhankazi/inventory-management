@@ -1,108 +1,52 @@
-// src/InventoryManager.js
+import React from 'react'
+import AdminLayout from '../../layouts/AdminLayout'
 
-import React, { useState } from 'react';
-
-const InventoryManager = () => {
-  const [inventory, setInventory] = useState([]);
-  const [itemName, setItemName] = useState('');
-  const [itemQuantity, setItemQuantity] = useState(1);
-  const [action, setAction] = useState('add'); // 'add' or 'remove'
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const existingItem = inventory.find(item => item.name === itemName);
-
-    if (action === 'add') {
-      if (existingItem) {
-        setInventory(inventory.map(item =>
-          item.name === itemName
-            ? { ...item, quantity: item.quantity + itemQuantity }
-            : item
-        ));
-      } else {
-        setInventory([...inventory, { name: itemName, quantity: itemQuantity }]);
-      }
-    } else if (action === 'remove') {
-      if (existingItem) {
-        if (existingItem.quantity > itemQuantity) {
-          setInventory(inventory.map(item =>
-            item.name === itemName
-              ? { ...item, quantity: item.quantity - itemQuantity }
-              : item
-          ));
-        } else {
-          setInventory(inventory.filter(item => item.name !== itemName));
-        }
-      }
-    }
-
-    // Reset form fields
-    setItemName('');
-    setItemQuantity(1);
-  };
-
+function StockLevels () {
+    
   return (
-    <div className="container mt-5">
-      <h2>Inventory Management</h2>
-
-      <form onSubmit={handleSubmit} className="mb-4">
-        <div className="mb-3">
-          <label htmlFor="itemName" className="form-label">Item Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="itemName"
-            value={itemName}
-            onChange={(e) => setItemName(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="itemQuantity" className="form-label">Quantity</label>
-          <input
-            type="number"
-            className="form-control"
-            id="itemQuantity"
-            min="1"
-            value={itemQuantity}
-            onChange={(e) => setItemQuantity(parseInt(e.target.value))}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="action" className="form-label">Action</label>
-          <select
-            className="form-select"
-            id="action"
-            value={action}
-            onChange={(e) => setAction(e.target.value)}
-          >
-            <option value="add">Add Stock</option>
-            <option value="remove">Remove Stock</option>
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
-
-      <h2>Current Inventory</h2>
-      <table className="table table-striped">
+<AdminLayout>
+<div class="container mt-5">
+    <h2>Current Stock Levels</h2>
+    <table class="table table-striped">
         <thead>
-          <tr>
-            <th scope="col">Item Name</th>
-            <th scope="col">Quantity</th>
-          </tr>
+            <tr>
+                <th scope="col">Item Name</th>
+                <th scope="col">Current Stock Level</th>
+                <th scope="col">Minimum Stock Level</th>
+                <th scope="col">Status</th>
+            </tr>
         </thead>
         <tbody>
-          {inventory.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>{item.quantity}</td>
+            <tr>
+                <td>Sample Item 1</td>
+                <td>50</td>
+                <td>20</td>
+                <td><span class="badge bg-success">In Stock</span></td>
             </tr>
-          ))}
+            <tr>
+                <td>Sample Item 2</td>
+                <td>10</td>
+                <td>15</td>
+                <td><span class="badge bg-warning">Low Stock</span></td>
+            </tr>
+            <tr>
+                <td>Sample Item 3</td>
+                <td>5</td>
+                <td>10</td>
+                <td><span class="badge bg-danger">Out of Stock</span></td>
+            </tr>
+            <tr>
+                <td>Sample Item 4</td>
+                <td>25</td>
+                <td>30</td>
+                <td><span class="badge bg-success">In Stock</span></td>
+            </tr>
         </tbody>
-      </table>
-    </div>
-  );
-};
+    </table>
+</div>
+  </AdminLayout>
 
-export default InventoryManager;
+)
+}
+
+export default StockLevels
