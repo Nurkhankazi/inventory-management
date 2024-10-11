@@ -4,14 +4,14 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function OrderAdd() {
-    const [inputs, setInputs] = useState({id:'',orderitem:'',orderquantity:'',orderprice:'',ordernotes:'',orderdate:''});
+function Suppliers() {
+    const [inputs, setInputs] = useState({id:'',suppliername:'',contactperson:'',phonenumber:'',email:'',address:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/order/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/suppliers/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -35,9 +35,9 @@ function OrderAdd() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/order/edit/${inputs.id}`;//api from laravel
+                apiurl=`/suppliers/edit/${inputs.id}`;//api from laravel
             }else{
-                apiurl=`/order/create`;//api from laravel
+                apiurl=`/suppliers/create`;//api from laravel
             }
             
             let response= await axios({
@@ -46,7 +46,7 @@ function OrderAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/order');// route from app.js
+            navigate('/suppliers');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -57,8 +57,8 @@ function OrderAdd() {
         <div className="main-content container-fluid">
             <div className="page-title">
                 <div className="row">
-                    <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>New Order</h3>
+                    <div className="col-12 col-md-12 order-md-1 order-last">
+                        <br/><h1 style={{textAlign: 'center'}}>Add New Product</h1>
                     </div>
                    
                 </div>
@@ -75,35 +75,35 @@ function OrderAdd() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Order item</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.orderitem} name="orderitem" onChange={handleChange} placeholder="orderitem"/>
+                                                    <label for="first-name-vertical"><h4>Supplier Name</h4></label>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.suppliername} name="suppliername" onChange={handleChange} placeholder="Suppliers Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Order quantity</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.orderquantity} name="orderquantity" onChange={handleChange} placeholder="orderquantity"/>
+                                                    <label for="email-id-vertical"><h4>Contact Person</h4></label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.contactperson} name="contactperson" onChange={handleChange} placeholder="contact person"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Order price</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.orderprice} name="orderprice" onChange={handleChange} placeholder="orderprice"/>
+                                                    <label for="email-id-vertical"><h4>Phone Number</h4></label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.phonenumber} name="phonenumber" onChange={handleChange} placeholder="phone number"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="ordernotes">Order notes</label>
-                                                    <input type="text" id="ordernotes" className="form-control" defaultValue={inputs.ordernotes} name="ordernotes" onChange={handleChange} placeholder="ordernotes"/>
+                                                    <label for="email-id-vertical"><h4>Email</h4></label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.email} name="email" onChange={handleChange} placeholder="email"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label htmlFor="orderdate">Order date</label>
-                                                    <input type="date" id="orderdate" className="form-control" defultValue={inputs.orderdate} name="orderdate" onChange={handleChange} />
+                                                    <label for="email-id-vertical"><h4>Address</h4></label>
+                                                    <input type="text" id="email-id-vertical" rows="3" className="form-control" defaultValue={inputs.address} name="address" onChange={handleChange} placeholder="address"/>
                                                     </div>
                                                 </div>
-
+                                                
                                                 
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
@@ -124,4 +124,4 @@ function OrderAdd() {
   )
 }
 
-export default OrderAdd
+export default Suppliers

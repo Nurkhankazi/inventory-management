@@ -6,8 +6,8 @@ import Categories from './pages/Categories';
 import Order from './pages/Order';
 import OrderAdd from './pages/Order/OrderAdd';
 import Order_history from './pages/Order_history';
-import Supplier_Add from './pages/Supplier_Add';
-import Supplier_View from './pages/Supplier_View';
+import Suppliers from './pages/Suppliers';
+import SuppliersAdd from './pages/Suppliers/SuppliersAdd';
 import Stock_levels from './pages/Stock_levels';
 import Stock_Adjustment from './pages/Stock_Adjustment';
 import User_Add from './pages/User_Add';
@@ -31,17 +31,22 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
           <Route path="/products" element={<Products />} />
           <Route path="/products/add" element={<ProductsAdd />} />
           <Route path="/products/edit/:id" element={<ProductsAdd />} />
-          {/* <Route path="/Products_list" element={<Products_list />} /> */}
+
           <Route path="/Categories" element={<Categories />} />
+
           <Route path="/order" element={<Order />} />
           <Route path="/order/add" element={<OrderAdd />} />
           <Route path="/order/edit/:id" element={<OrderAdd />} />
           <Route path="/Order_history" element={<Order_history />} />
-          <Route path="/Supplier_Add" element={<Supplier_Add />} />
-          <Route path="/Supplier_View" element={<Supplier_View />} />
+
+          <Route path="/suppliers" element={<Suppliers />} />
+          <Route path="/suppliers/add" element={<SuppliersAdd />} />
+          <Route path="/suppliers/edit/:id" element={<SuppliersAdd />} />
+
           <Route path="/Stock_levels" element={<Stock_levels />} />
           <Route path="/Stock_Adjustment" element={<Stock_Adjustment />} />
           <Route path="/User_Add" element={<User_Add />} />
