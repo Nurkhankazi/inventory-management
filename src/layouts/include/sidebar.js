@@ -190,6 +190,32 @@ function Sidebar() {
             </li>
 
             <li className="menu-item">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Settings" aria-expanded="false" aria-controls="Settings">
+              <i className="menu-icon tf-icons bx bx-file"></i>
+              <span className="Documentation">Purchase</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div className="collapse" id="Settings">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_management") ? 'active' : ''}`}>
+                    <Link to="/User_management" className="sidebar-link nav-link">
+                        <span className="menu-title">Purchase Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Notifications") ? 'active' : ''}`}>
+                    <Link to="/Notifications" className="sidebar-link nav-link">
+                        <span className="menu-title">Purchase list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="menu-item">
               <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Inventory" aria-expanded="false" aria-controls="Inventory">
               <i className="menu-icon tf-icons bx bx-grid"></i>
                 <span className="Datatables">Inventory</span>
@@ -267,31 +293,7 @@ function Sidebar() {
               </div>
             </li>
 
-            <li className="menu-item">
-              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Settings" aria-expanded="false" aria-controls="Settings">
-              <i className="menu-icon tf-icons bx bx-file"></i>
-              <span className="Documentation">Settings</span>
-                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
-              </a>
-              <div className="collapse" id="Settings">
-                <ul className="nav flex-column sub-menu">
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_management") ? 'active' : ''}`}>
-                    <Link to="/User_management" className="sidebar-link nav-link">
-                        <span className="menu-title">User Management</span>
-                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
-                        
-                    </Link>
-                  </li>
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Notifications") ? 'active' : ''}`}>
-                    <Link to="/Notifications" className="sidebar-link nav-link">
-                        <span className="menu-title">Notifications</span>
-                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
-
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
+            
 
           </ul>
         </aside>
