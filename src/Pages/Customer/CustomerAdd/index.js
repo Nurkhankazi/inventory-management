@@ -4,14 +4,14 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function Addproduct() {
+function CustomerAdd() {
     const [inputs, setInputs] = useState({id:'',name:'',description:'',quantity:'',price:'',category:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/product/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/customer/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -35,9 +35,9 @@ function Addproduct() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/product/edit/${inputs.id}`;//api from laravel
+                apiurl=`/customer/edit/${inputs.id}`;//api from laravel
             }else{
-                apiurl=`/product/create`;//api from laravel
+                apiurl=`/customer/create`;//api from laravel
             }
             
             let response= await axios({
@@ -46,7 +46,7 @@ function Addproduct() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/products');// route from app.js
+            navigate('/customer');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -58,7 +58,7 @@ function Addproduct() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>Add New Product</h3>
+                        <br/><h3>Add New Customer</h3>
                     </div>
                    
                 </div>
@@ -75,32 +75,55 @@ function Addproduct() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical"> Name</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Name"/>
+                                                    <label for="name"> Name</label>
+                                                    <input type="text" id="name" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="Name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">description</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.description} name="description" onChange={handleChange} placeholder="description"/>
+                                                    <label for="email">Email</label>
+                                                    <input type="text" id="email" className="form-control" defaultValue={inputs.email} name="email" onChange={handleChange} placeholder="email"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">quantity</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.quantity} name="quantity" onChange={handleChange} placeholder="quantity"/>
+                                                    <label for="number">Phone Number</label>
+                                                    <input type="text" id="number" className="form-control" defaultValue={inputs.number} name="number" onChange={handleChange} placeholder="number"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">price</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.price} name="price" onChange={handleChange} placeholder="price"/>
+                                                    <label for="address">Address</label>
+                                                    <input type="text" id="address" className="form-control" defaultValue={inputs.address} name="address" onChange={handleChange} placeholder="address"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">category</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.category} name="category" onChange={handleChange} placeholder="category"/>
+                                                    <label for="gender">Gender</label>
+                                                    <select id="gender" className="form-control" defaultValue={inputs.gender} name="gender" onChange={handleChange}>
+                                                        <option value="">Select Gender</option>
+                                                        <option value="male">Male</option>
+                                                        <option value="female">Female</option>
+                                                    </select>
+                                                    </div>
+                                                </div>
+
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label htmlFor="birth">Date of Birth</label>
+                                                    <input type="date" id="birth" className="form-control" defultValue={inputs.birth} name="birth" onChange={handleChange} />
+                                                    </div>
+                                                </div>
+
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="type">Customer Type:</label>
+                                                    <select id="type" className="form-control" defaultValue={inputs.type} name="type" onChange={handleChange}>
+                                                        <option value="">Select Type</option>
+                                                        <option value="Regular">Regular</option>
+                                                        <option value="VIP">VIP</option>
+                                                        <option value="Wholesale">Wholesale</option>
+                                                    </select>
                                                     </div>
                                                 </div>
                                                 
@@ -124,4 +147,4 @@ function Addproduct() {
   )
 }
 
-export default Addproduct
+export default CustomerAdd

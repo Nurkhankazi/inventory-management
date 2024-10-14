@@ -130,6 +130,32 @@ function Sidebar() {
             </li>
 
             <li className="menu-item">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Category" aria-expanded="false" aria-controls="Category">
+              <i className="menu-icon tf-icons bx bx-detail"></i>
+                <span className="Category">Category</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div className="collapse" id="category">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/category/add") ? 'active' : ''}`}>
+                    <Link to="/Category/add" className="sidebar-link nav-link">
+                        <span className="menu-title">Category Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Category") ? 'active' : ''}`}>
+                    <Link to="/category" className="sidebar-link nav-link">
+                        <span className="menu-title">Category list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="menu-item">
               <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Orders" aria-expanded="false" aria-controls="Orders">
               <i className="menu-icon tf-icons bx bx-list-check"></i>
                 <span className="Form Validation">Orders</span>
@@ -190,22 +216,48 @@ function Sidebar() {
             </li>
 
             <li className="menu-item">
-              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Settings" aria-expanded="false" aria-controls="Settings">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Customer" aria-expanded="false" aria-controls="Customer">
+              <i className="menu-icon tf-icons bx bx-detail"></i>
+                <span className="Customer">Customer</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div className="collapse" id="customer">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Customer/add") ? 'active' : ''}`}>
+                    <Link to="/customer/add" className="sidebar-link nav-link">
+                        <span className="menu-title">Customer Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/customer") ? 'active' : ''}`}>
+                    <Link to="/customer" className="sidebar-link nav-link">
+                        <span className="menu-title">Customer list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="menu-item">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Purchase" aria-expanded="false" aria-controls="Purchase">
               <i className="menu-icon tf-icons bx bx-file"></i>
               <span className="Documentation">Purchase</span>
                 <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <div className="collapse" id="Settings">
+              <div className="collapse" id="Purchase">
                 <ul className="nav flex-column sub-menu">
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/User_management") ? 'active' : ''}`}>
-                    <Link to="/User_management" className="sidebar-link nav-link">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Purchase/add") ? 'active' : ''}`}>
+                    <Link to="/purchase/add" className="sidebar-link nav-link">
                         <span className="menu-title">Purchase Add</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         
                     </Link>
                   </li>
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Notifications") ? 'active' : ''}`}>
-                    <Link to="/Notifications" className="sidebar-link nav-link">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/purchase") ? 'active' : ''}`}>
+                    <Link to="/purchase" className="sidebar-link nav-link">
                         <span className="menu-title">Purchase list</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
 

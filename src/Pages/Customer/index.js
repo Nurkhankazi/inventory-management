@@ -3,19 +3,19 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Products() {
+function Customer() {
     const[data, setData]=useState([]);
     useEffect(() => {
         getDatas();
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/product`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/customer`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/product/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/customer/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -25,7 +25,7 @@ function Products() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Product list</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Customer list</h1>
                     </div>
                     
                 </div>
@@ -35,19 +35,21 @@ function Products() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Product</h4>
-                            <Link to={'/products/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Customer</h4>
+                            <Link to={'/customer/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>description</th>
-                                            <th>quantity</th>
-                                            <th>price</th>
-                                            <th>category</th>
+                                            <th>name</th>
+                                            <th>email</th>
+                                            <th>phone number</th>
+                                            <th>address</th>
+                                            <th>gender</th>
+                                            <th>birth of date</th>
+                                            <th>customer type</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -56,12 +58,14 @@ function Products() {
                                         <tr key={d.id}>
                                            
                                             <td>{d.name}</td>
-                                            <td>{d.description}</td>
-                                            <td>{d.quantity}</td>
-                                            <td>{d.price}</td>
-                                            <td>{d.category}</td>
+                                            <td>{d.email}</td>
+                                            <td>{d.number}</td>
+                                            <td>{d.address}</td>
+                                            <td>{d.gender}</td>
+                                            <td>{d.birth}</td>
+                                            <td>{d.type}</td>
                                             <td>
-                                                <Link to={`/products/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/customer/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -79,4 +83,4 @@ function Products() {
   )
 }
 
-export default Products
+export default Customer
