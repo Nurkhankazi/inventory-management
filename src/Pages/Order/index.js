@@ -42,11 +42,13 @@ function Order() {
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
+                                            <th>customer</th>
                                             <th>order item</th>
                                             <th>order quantity</th>
                                             <th>order price</th>
                                             <th>order notes</th>
                                             <th>order date</th>
+                                            <th>action</th>
                                             
                                         </tr>
                                     </thead>
@@ -54,6 +56,7 @@ function Order() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                            
+                                            <td>{d.name}</td>
                                             <td>{d.orderitem}</td>
                                             <td>{d.orderquantity}</td>
                                             <td>{d.orderprice}</td>

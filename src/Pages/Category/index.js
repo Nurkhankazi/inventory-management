@@ -3,19 +3,19 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Order() {
+function Category() {
     const[data, setData]=useState([]);
     useEffect(() => {
         getDatas();
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/order`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/category`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/order/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/category/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -24,8 +24,8 @@ function Order() {
         <div className="main-content container-fluid">
             <div className="page-title">
                 <div className="row">
-                    <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Order List</h1>
+                    <div className="col-12 col-md-12 category-md-1 category-last">
+                        <br/><h1 style={{textAlign: 'center'}}>Category List</h1>
                     </div>
                 </div>
             </div>
@@ -34,19 +34,17 @@ function Order() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Order</h4>
-                            <Link to={'/order/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Category</h4>
+                            <Link to={'/category/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
                                 <table className="table table-bordered mb-0">
                                     <thead>
                                         <tr>
-                                            <th>order item</th>
-                                            <th>order quantity</th>
-                                            <th>order price</th>
-                                            <th>order notes</th>
-                                            <th>order date</th>
+                                            <th>category name</th>
+                                            <th>category group</th>
+                                            <th>Action</th>
                                             
                                         </tr>
                                     </thead>
@@ -54,13 +52,10 @@ function Order() {
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
                                            
-                                            <td>{d.orderitem}</td>
-                                            <td>{d.orderquantity}</td>
-                                            <td>{d.orderprice}</td>
-                                            <td>{d.ordernotes}</td>
-                                            <td>{d.orderdate}</td>
+                                            <td>{d.name}</td>
+                                            <td>{d.group}</td>
                                            <td>
-                                                <Link to={`/order/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/category/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -78,4 +73,4 @@ function Order() {
   )
 }
 
-export default Order
+export default Category

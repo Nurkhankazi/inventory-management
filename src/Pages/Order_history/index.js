@@ -25,7 +25,7 @@ function Order_history() {
                 <td>Sample Item 1</td>
                 <td>3</td>
                 <td>2024-08-15</td>
-                <td>$59.97</td>
+                <td>59.97</td>
                 <td>Completed</td>
             </tr>
             <tr>
@@ -33,15 +33,15 @@ function Order_history() {
                 <td>Sample Item 2</td>
                 <td>2</td>
                 <td>2024-08-20</td>
-                <td>$39.98</td>
-                <td>Completed</td>
+                <td>39.98</td>
+                <td>Panding</td>
             </tr>
             <tr>
                 <td>003</td>
                 <td>Sample Item 3</td>
                 <td>1</td>
                 <td>2024-09-01</td>
-                <td>$19.99</td>
+                <td>19.99</td>
                 <td>Cancelled</td>
             </tr>
             

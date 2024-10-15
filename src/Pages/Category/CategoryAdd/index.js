@@ -4,14 +4,14 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function OrderAdd() {
-    const [inputs, setInputs] = useState({id:'',orderitem:'',orderquantity:'',orderprice:'',ordernotes:'',orderdate:''});
+function CategoryAdd() {
+    const [inputs, setInputs] = useState({id:'',name:'',group:''});
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/order/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/category/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -35,9 +35,9 @@ function OrderAdd() {
         try{
             let apiurl='';
             if(inputs.id!=''){
-                apiurl=`/order/edit/${inputs.id}`;//api from laravel
+                apiurl=`/category/edit/${inputs.id}`;//api from laravel
             }else{
-                apiurl=`/order/create`;//api from laravel
+                apiurl=`/category/create`;//api from laravel
             }
             
             let response= await axios({
@@ -46,7 +46,7 @@ function OrderAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/order');// route from app.js
+            navigate('/category');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -58,7 +58,7 @@ function OrderAdd() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>New Order</h3>
+                        <br/><h3>Category Add</h3>
                     </div>
                    
                 </div>
@@ -75,36 +75,17 @@ function OrderAdd() {
                                             <div className="row">
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Order item</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.orderitem} name="orderitem" onChange={handleChange} placeholder="orderitem"/>
+                                                    <label for="first-name-vertical">Category Name</label>
+                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="name"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">Order quantity</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.orderquantity} name="orderquantity" onChange={handleChange} placeholder="orderquantity"/>
+                                                    <label for="email-id-vertical">Group</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.group} name="group" onChange={handleChange} placeholder="group"/>
                                                     </div>
                                                 </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="email-id-vertical">Order price</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.orderprice} name="orderprice" onChange={handleChange} placeholder="orderprice"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label for="ordernotes">Order notes</label>
-                                                    <input type="text" id="ordernotes" className="form-control" defaultValue={inputs.ordernotes} name="ordernotes" onChange={handleChange} placeholder="ordernotes"/>
-                                                    </div>
-                                                </div>
-                                                <div className="col-12">
-                                                    <div className="form-group">
-                                                    <label htmlFor="orderdate">Order date</label>
-                                                    <input type="date" id="orderdate" className="form-control" defultValue={inputs.orderdate} name="orderdate" onChange={handleChange} />
-                                                    </div>
-                                                </div>
-
-                                                
+                     
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
                                                     <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
@@ -124,4 +105,4 @@ function OrderAdd() {
   )
 }
 
-export default OrderAdd
+export default CategoryAdd

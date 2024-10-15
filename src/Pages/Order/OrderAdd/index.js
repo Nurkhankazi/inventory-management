@@ -73,10 +73,17 @@ function OrderAdd() {
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
                                             <div className="row">
+                                                
+                                                <div className="col-12">
+                                                    <div className="form-group">                                                
+                                                    <label for="email-id-vertical">Name</label>
+                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.name} name="name" onChange={handleChange} placeholder="name"/>
+                                                    </div>
+                                                </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="first-name-vertical">Order item</label>
-                                                    <input type="text" id="first-name-vertical" className="form-control" defaultValue={inputs.orderitem} name="orderitem" onChange={handleChange} placeholder="orderitem"/>
+                                                    <label for="orderitem">Order item</label>
+                                                    <input type="text" id="orderitem" className="form-control" defaultValue={inputs.orderitem} name="orderitem" onChange={handleChange} placeholder="orderitem"/>
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

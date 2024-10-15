@@ -10,6 +10,9 @@ import OrderAdd from './pages/Order/OrderAdd';
 import Customer from './pages/Customer';
 import CustomerAdd from './pages/Customer/CustomerAdd';
 
+import Category from './pages/Category';
+import CategoryAdd from './pages/Category/CategoryAdd';
+
 import Order_history from './pages/Order_history';
 import Suppliers from './pages/Suppliers';
 import SuppliersAdd from './pages/Suppliers/SuppliersAdd';
@@ -62,6 +65,10 @@ function App() {
           <Route path="/customer" element={<Customer />} />
           <Route path="/customer/add" element={<CustomerAdd />} />
           <Route path="/customer/edit/:id" element={<CustomerAdd />} />
+
+          <Route path="/category" element={<Category />} />
+          <Route path="/category/add" element={<CategoryAdd />} />
+          <Route path="/category/edit/:id" element={<CategoryAdd />} />
 
           <Route path="/Stock_levels" element={<Stock_levels />} />
           <Route path="/Stock_Adjustment" element={<Stock_Adjustment />} />
