@@ -5,10 +5,10 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function PurchaseAdd() {
-    const [inputs, setInputs] = useState({id:'',purchase_date:'',supplier_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
+function SalesAdd() {
+    const [inputs, setInputs] = useState({id:'',sales_date:'',customer_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
     const [items, setItems] = useState([]);
-    const [spuuliers, setSuppliers] = useState([]);
+    const [customer, setCustomer] = useState([]);
     const [cartitems, setCartItems] = useState([]);
     const [totalData, setTotalData] = useState({total:0,discount:0,tax:0,discountAmt:0,taxAmt:0,totalQty:0,finalTotal:0});
     const navigate=useNavigate();
@@ -19,9 +19,9 @@ function PurchaseAdd() {
             setItems(response.data.data);
         });
     }
-    const getSuppliers= async(e) =>{
-        axios.get(`${process.env.REACT_APP_API_URL}/suppliers`).then(function(response) {
-            setSuppliers(response.data.data);
+    const getCustomer= async(e) =>{
+        axios.get(`${process.env.REACT_APP_API_URL}/customer`).then(function(response) {
+            setCustomer(response.data.data);
         });
     }
     
@@ -39,7 +39,7 @@ function PurchaseAdd() {
       }    
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/purchase/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/sales/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -48,7 +48,7 @@ function PurchaseAdd() {
         if(id){
             getDatas();
         }
-        getSuppliers();
+        getCustomer();
         getProducts();
         handleTotalcal();
     }, [cartitems]);
@@ -137,7 +137,7 @@ function PurchaseAdd() {
         }
         
         try{
-            let apiurl=`/purchase/create`;//api from laravel
+            let apiurl=`/sales/create`;//api from laravel
             
             
             let response= await axios({
@@ -146,7 +146,7 @@ function PurchaseAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: obj
             });
-            navigate('/purchase');// route from app.js
+            navigate('/sales');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -159,7 +159,7 @@ function PurchaseAdd() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>Add New Purchase</h3>
+                        <br/><h3>Add New Sales</h3>
                     </div>
                    
                 </div>
@@ -176,12 +176,12 @@ function PurchaseAdd() {
                                             <div className="row">
                                                 <div className="col-6">
                                                     <div className="form-group">
-                                                    <label for="supplier_id">Supplier</label>
-                                                    {spuuliers.length > 0 && 
-                                                        <select className="form-control" id="supplier_id" name='supplier_id' defaultValue={inputs.supplier_id} onChange={handleChange}>
-                                                            <option value="">Select Supplier</option>
-                                                            {spuuliers.map((d, key) =>
-                                                                <option value={d.id}>{d.suppliername}</option>
+                                                    <label for="customer_id">Customer</label>
+                                                    {customer.length > 0 && 
+                                                        <select className="form-control" id="customer_id" name='customer_id' defaultValue={inputs.customer_id} onChange={handleChange}>
+                                                            <option value="">Select Customer</option>
+                                                            {customer.map((d, key) =>
+                                                                <option value={d.id}>{d.name}</option>
                                                             )}
                                                         </select>
                                                     }
@@ -189,8 +189,8 @@ function PurchaseAdd() {
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
-                                                    <label htmlFor="purchase_date">date</label>
-                                                    <input type="date" id="purchase_date" className="form-control" defultValue={inputs.purchase_date} name="purchase_date" onChange={handleChange} />
+                                                    <label htmlFor="sales_date">date</label>
+                                                    <input type="date" id="sales_date" className="form-control" defultValue={inputs.sales_date} name="sales_date" onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -275,4 +275,4 @@ function PurchaseAdd() {
   )
 }
 
-export default PurchaseAdd
+export default SalesAdd

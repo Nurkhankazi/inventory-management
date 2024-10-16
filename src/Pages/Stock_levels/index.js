@@ -1,7 +1,19 @@
-import React from 'react'
-import AdminLayout from '../../layouts/AdminLayout'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import AdminLayout from '../../layouts/AdminLayout';
+import { Link } from 'react-router-dom';
 
 function StockLevels () {
+    const[data, setData]=useState([]);
+    useEffect(() => {
+        getDatas();
+    }, []);
+
+    function getDatas() {
+        axios.get(`${process.env.REACT_APP_API_URL}/stock`).then(function(response) {
+            setData(response.data.data);
+        });
+    }
     
   return (
 <AdminLayout>
@@ -11,36 +23,20 @@ function StockLevels () {
         <thead>
             <tr>
                 <th scope="col">Item Name</th>
-                <th scope="col">Current Stock Level</th>
+                <th scope="col">Qty</th>
                 <th scope="col">Minimum Stock Level</th>
                 <th scope="col">Status</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Sample Item 1</td>
-                <td>50</td>
-                <td>20</td>
-                <td><span class="badge bg-success">In Stock</span></td>
-            </tr>
-            <tr>
-                <td>Sample Item 2</td>
-                <td>10</td>
-                <td>15</td>
-                <td><span class="badge bg-warning">Low Stock</span></td>
-            </tr>
-            <tr>
-                <td>Sample Item 3</td>
-                <td>5</td>
-                <td>10</td>
-                <td><span class="badge bg-danger">Out of Stock</span></td>
-            </tr>
-            <tr>
-                <td>Sample Item 4</td>
-                <td>25</td>
-                <td>30</td>
-                <td><span class="badge bg-success">In Stock</span></td>
-            </tr>
+            {data && data.map((d, key) =>
+                <tr key={d.id}>
+                    <td>{d.name}</td>
+                    <td>{d.qty}</td>
+                    <td><span class="badge bg-success">In Stock</span></td>
+                </tr>
+            )}
+            
         </tbody>
     </table>
 </div>

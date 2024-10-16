@@ -27,6 +27,9 @@ import Supplier_reports from './pages/Supplier_reports';
 import Purchase from './pages/Purchase';
 import PurchaseAdd from './pages/Purchase/PurchaseAdd';
 
+import Sales from './pages/Sales';
+import SalesAdd from './pages/Sales/SalesAdd';
+
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -61,6 +64,10 @@ function App() {
           <Route path="/purchase" element={<Purchase />} />
           <Route path="/purchase/add" element={<PurchaseAdd />} />
           <Route path="/purchase/edit/:id" element={<PurchaseAdd />} />
+
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/sales/add" element={<SalesAdd />} />
+          <Route path="/sales/edit/:id" element={<SalesAdd />} />
 
           <Route path="/customer" element={<Customer />} />
           <Route path="/customer/add" element={<CustomerAdd />} />

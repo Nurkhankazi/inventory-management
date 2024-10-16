@@ -105,7 +105,7 @@ function Sidebar() {
               <div className="collapse" id="Products">
                 <ul className="nav flex-column sub-menu">
                   <li onClick={activeMenu} className={`nav-item ${isLinkActive("/products/add") ? 'active' : ''}`}>
-                    <Link to="/Products/add" className="sidebar-link nav-link">
+                    <Link to="/products/add" className="sidebar-link nav-link">
                         <span className="menu-title">Product Add</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         
@@ -151,7 +151,7 @@ function Sidebar() {
               <div className="collapse" id="Orders">
                 <ul className="nav flex-column sub-menu">
                 <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Order/add") ? 'active' : ''}`}>
-                    <Link to="/Order/add" className="sidebar-link nav-link">
+                    <Link to="/order/add" className="sidebar-link nav-link">
                         <span className="menu-title">Order Add</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         
@@ -246,6 +246,32 @@ function Sidebar() {
                   <li onClick={activeMenu} className={`nav-item ${isLinkActive("/purchase") ? 'active' : ''}`}>
                     <Link to="/purchase" className="sidebar-link nav-link">
                         <span className="menu-title">Purchase list</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li className="menu-item">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Sales" aria-expanded="false" aria-controls="Sales">
+              <i className="menu-icon tf-icons bx bx-file"></i>
+              <span className="Documentation">Sales</span>
+                <i className="mdi mdi-crosshairs-gps menu-icon"></i>
+              </a>
+              <div className="collapse" id="Sales">
+                <ul className="nav flex-column sub-menu">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Sales/add") ? 'active' : ''}`}>
+                    <Link to="/sales/add" className="sidebar-link nav-link">
+                        <span className="menu-title">Sales Add</span>
+                        <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
+                        
+                    </Link>
+                  </li>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/sales") ? 'active' : ''}`}>
+                    <Link to="/sales" className="sidebar-link nav-link">
+                        <span className="menu-title">Sales list</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
 
                     </Link>
