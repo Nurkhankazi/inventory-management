@@ -54,7 +54,8 @@ function Sales() {
                                     <tbody>
                                     {data && data.map((d, key) =>
                                         <tr key={d.id}>
-                                            <td>{d.customer?.name}</td>
+                                            {/* <td>{d.customer?.name}</td> */}
+                                            <td>{d.customer? d.customer.name : 'Nurkhan'}</td>
                                             <td>{d.total}</td>
                                             <td>{d.discountamt}</td>
                                             <td>{d.taxamt}</td>
