@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Dashboard from './pages/Dashboard';
 import Products from './pages/Products';
 import ProductsAdd from './pages/Products/ProductsAdd';
-import Categories from './pages/Categories';
 
 import Order from './pages/Order';
 import OrderAdd from './pages/Order/OrderAdd';
@@ -50,8 +49,6 @@ function App() {
           <Route path="/products/add" element={<ProductsAdd />} />
           <Route path="/products/edit/:id" element={<ProductsAdd />} />
 
-          <Route path="/Categories" element={<Categories />} />
-
           <Route path="/order" element={<Order />} />
           <Route path="/order/add" element={<OrderAdd />} />
           <Route path="/order/edit/:id" element={<OrderAdd />} />
@@ -78,6 +75,7 @@ function App() {
           <Route path="/category/edit/:id" element={<CategoryAdd />} />
 
           <Route path="/Stock_levels" element={<Stock_levels />} />
+          
           <Route path="/Stock_Adjustment" element={<Stock_Adjustment />} />
           <Route path="/User_Add" element={<User_Add />} />
           <Route path="/User_list" element={<User_list />} />
