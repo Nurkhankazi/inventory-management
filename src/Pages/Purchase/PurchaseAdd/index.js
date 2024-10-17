@@ -155,17 +155,17 @@ function PurchaseAdd() {
 
   return (
     <AdminLayout>
-        <div className="main-content container-fluid">
+        <div className="main-content container-fluid" >
             <div className="page-title">
                 <div className="row">
-                    <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>Add New Purchase</h3>
+                    <div className="col-12 col-md-12 order-md-1 order-last">
+                        <br/><h1 style={{textAlign: 'center'}}>Add New Purchase</h1>
                     </div>
                    
                 </div>
             </div>
 
-            <section id="basic-vertical-layouts">
+            <section id="basic-vertical-layouts" >
                 <div className="row match-height">
                     <div className="col-12">
                         <div className="card">
@@ -173,7 +173,7 @@ function PurchaseAdd() {
                                 <div className="card-body">
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
-                                            <div className="row">
+                                            <div className="row" style={{ fontWeight: 'bold' }}>
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                     <label for="supplier_id">Supplier</label>
@@ -206,8 +206,8 @@ function PurchaseAdd() {
                                                 </div>
                                             </div>
                                             <div className='row'>
-                                                <table className='mt-3 table table-bordered'>
-                                                    <tr>
+                                                <table className='mt-3 table table-bordered' >
+                                                    <tr style={{ backgroundColor: '#e9ecef', fontWeight: 'bold' }}>
                                                         <td>Name</td>
                                                         <td>Qty</td>
                                                         <td>Price</td>
@@ -233,22 +233,22 @@ function PurchaseAdd() {
                                                 <div className="col-6 offset-6 d-flex justify-content-end">
                                                     <table className='my-3 table table-bordered'>
                                                         <tr>
-                                                            <td>Total:</td>
+                                                            <td style={{ fontWeight: 'bold' }}>Total:</td>
                                                             <td>{totalData.total}</td>
                                                             <td></td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Discount:</td>
+                                                            <td style={{ fontWeight: 'bold' }}>Discount:</td>
                                                             <td><input className='form-control' type="text" defaultValue={totalData.discount} name="discount" onChange={(e)=>handleTotalChange(e)} /></td>
                                                             <td>{totalData.discountAmt}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Tax:</td>
+                                                            <td style={{ fontWeight: 'bold' }}>Tax:</td>
                                                             <td><input className='form-control' type="text" defaultValue={totalData.tax} name="tax" onChange={(e)=>handleTotalChange(e)} /></td>
                                                             <td>{totalData.taxAmt}</td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Grand Total:</td>
+                                                            <td style={{ fontWeight: 'bold' }}>Grand Total:</td>
                                                             <td></td>
                                                             <td>{totalData.finalTotal}</td>
                                                         </tr>
@@ -257,8 +257,8 @@ function PurchaseAdd() {
                                             </div>
                                             <div className='row'> 
                                                 <div className="col-12 d-flex justify-content-end">
-                                                    <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
-                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
+                                                    <button type="submit" className="btn btn-primary mr-1 mb-1" style={{ backgroundColor: '#007bff', borderColor: '#007bff', borderRadius: '5px' }}>Submit</button>
+                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1" style={{ backgroundColor: '#f8f9fa', borderColor: '#ced4da', borderRadius: '5px' }}>Reset</button>
                                                 </div>
                                             </div>
                                         </div>

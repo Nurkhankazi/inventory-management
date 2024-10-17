@@ -158,8 +158,8 @@ function SalesAdd() {
         <div className="main-content container-fluid">
             <div className="page-title">
                 <div className="row">
-                    <div className="col-12 col-md-6 order-md-1 order-last">
-                        <br/><h3>Add New Sales</h3>
+                    <div className="col-12 col-md-12 order-md-1 order-last">
+                        <br/><h1 style={{textAlign: 'center'}}>Add New Sales</h1>
                     </div>
                    
                 </div>
@@ -173,7 +173,7 @@ function SalesAdd() {
                                 <div className="card-body">
                                     <form className="form form-vertical" onSubmit={handleSubmit}>
                                         <div className="form-body">
-                                            <div className="row">
+                                            <div className="row" style={{ fontWeight: 'bold' }}>
                                                 <div className="col-6">
                                                     <div className="form-group">
                                                     <label for="customer_id">Customer</label>
@@ -207,7 +207,7 @@ function SalesAdd() {
                                             </div>
                                             <div className='row'>
                                                 <table className='mt-3 table table-bordered'>
-                                                    <tr>
+                                                    <tr style={{ backgroundColor: '#e9ecef', fontWeight: 'bold' }}>
                                                         <td>Name</td>
                                                         <td>Qty</td>
                                                         <td>Price</td>
@@ -231,7 +231,7 @@ function SalesAdd() {
                                             </div>
                                             <div className='row'> 
                                                 <div className="col-6 offset-6 d-flex justify-content-end">
-                                                    <table className='my-3 table table-bordered'>
+                                                    <table className='my-3 table table-bordered' style={{ fontWeight: 'bold' }}>
                                                         <tr>
                                                             <td>Total:</td>
                                                             <td>{totalData.total}</td>
