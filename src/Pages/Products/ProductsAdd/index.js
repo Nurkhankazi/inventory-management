@@ -5,21 +5,34 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function Addproduct() {
-    const [inputs, setInputs] = useState({id:'',name:'',description:'',quantity:'',price:'',category:''});
+    const [inputs, setInputs] = useState({id:'',name:'',description:'',quantity:'',price:'',category_id:''});
+    const [category, setCategory] = useState([]);
     const navigate=useNavigate();
     const {id} = useParams();
+
+    const getCategory= async(e) =>{
+        axios.get(`${process.env.REACT_APP_API_URL}/category`).then(function(response) {
+            setCategory(response.data.data);
+        });
+    }
     
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/product/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/products/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
+    // function get_relation(){
+    //     axios.get(`${process.env.REACT_APP_API_URL}/category/index`).then(function(response) {
+    //         setCategory(response.data.data);
+    //     });
+    // }
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        getCategory();
     }, []);
 
     const handleChange = (event) => {
@@ -99,12 +112,17 @@ function Addproduct() {
                                                 </div>
                                                 <div className="col-12">
                                                     <div className="form-group">
-                                                    <label for="email-id-vertical">category</label>
-                                                    <input type="text" id="email-id-vertical" className="form-control" defaultValue={inputs.category} name="category" onChange={handleChange} placeholder="category"/>
+                                                    <label htmlFor="category_id">Category</label>
+                                                    {category.length > 0 && 
+                                                        <select className="form-control" id="category_id" name='category_id' defaultValue={inputs.category_id} onChange={handleChange}>
+                                                            <option value="">Select Category</option>
+                                                            {category.map((d, key) =>
+                                                                <option value={d.id}>{d.name}</option>
+                                                            )}
+                                                        </select>
+                                                    }
                                                     </div>
                                                 </div>
-                                                
-                                                
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
                                                     <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>

@@ -29,6 +29,12 @@ import PurchaseAdd from './pages/Purchase/PurchaseAdd';
 import Sales from './pages/Sales';
 import SalesAdd from './pages/Sales/SalesAdd';
 
+import SalesReturn from './pages/SalesReturn';
+import SalesReturnAdd from './pages/SalesReturn/SalesReturnAdd';
+
+import PurchaseReturn from './pages/PurchaseReturn';
+import PurchaseReturnAdd from './pages/PurchaseReturn/PurchaseReturnAdd';
+
 import Login from './pages/Login';
 import Register from './pages/Register';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -75,6 +81,12 @@ function App() {
           <Route path="/category/edit/:id" element={<CategoryAdd />} />
 
           <Route path="/Stock_levels" element={<Stock_levels />} />
+
+          <Route path="/SalesReturn" element={<SalesReturn />} />
+          <Route path="/SalesReturnAdd" element={<SalesReturnAdd />} />
+
+          <Route path="/PurchaseReturn" element={<PurchaseReturn />} />
+          <Route path="/PurchaseReturnAdd" element={<PurchaseReturnAdd />} />
           
           <Route path="/Stock_Adjustment" element={<Stock_Adjustment />} />
           <Route path="/User_Add" element={<User_Add />} />
