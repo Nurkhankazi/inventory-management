@@ -273,21 +273,21 @@ function Sidebar() {
             </li>
 
             <li className="menu-item">
-              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#Returns" aria-expanded="false" aria-controls="Returns">
+              <a className="menu-link menu-toggle" data-bs-toggle="collapse" href="#SalesReturn" aria-expanded="false" aria-controls="SalesReturn">
               <i className="menu-icon tf-icons bx bx-list-check"></i>
               <span className="Documentation">Sales Return</span>
                 <i className="mdi mdi-crosshairs-gps menu-icon"></i>
               </a>
-              <div className="collapse" id="Returns">
+              <div className="collapse" id="SalesReturn">
                 <ul className="nav flex-column sub-menu">
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/Sales/add") ? 'active' : ''}`}>
-                    <Link to="/salesreturnadd" className="sidebar-link nav-link">
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/SalesReturn/add") ? 'active' : ''}`}>
+                    <Link to="/salesreturn/add" className="sidebar-link nav-link">
                         <span className="menu-title">Return</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>
                         
                     </Link>
                   </li>
-                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/sales") ? 'active' : ''}`}>
+                  <li onClick={activeMenu} className={`nav-item ${isLinkActive("/salesreturn") ? 'active' : ''}`}>
                     <Link to="/salesreturn" className="sidebar-link nav-link">
                         <span className="menu-title">Return list</span>
                         <i data-feather="home" width="20" className="mdi mdi-contacts menu-icon"></i>

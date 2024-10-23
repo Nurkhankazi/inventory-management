@@ -3,7 +3,7 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Sales() {
+function SalesReturn() {
     const[data, setData]=useState([]);
     useEffect(() => {
         getDatas();
@@ -36,7 +36,7 @@ function Sales() {
                     <div className="card">
                         <div className="card-header">
                             <h4 className="card-title">All Sales</h4>
-                            <Link to={'/sales/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <Link to={'/salesreturn/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
@@ -60,7 +60,7 @@ function Sales() {
                                             <td>{d.taxamt}</td>
                                             <td>{d.gtotal}</td>
                                             <td>
-                                                <Link to={`/sales/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/salesreturn/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -77,4 +77,4 @@ function Sales() {
   )
 }
 
-export default Sales
+export default SalesReturn

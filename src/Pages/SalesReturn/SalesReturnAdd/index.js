@@ -39,7 +39,7 @@ function SalesReturnAdd() {
       }    
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/sales/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/salesreturn/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -146,7 +146,7 @@ function SalesReturnAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: obj
             });
-            navigate('/sales');// route from app.js
+            navigate('/salesreturn');// route from app.js
         } 
         catch(e){
             console.log(e);

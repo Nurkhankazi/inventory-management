@@ -18,16 +18,11 @@ function Addproduct() {
     
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/products/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/product/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
-    // function get_relation(){
-    //     axios.get(`${process.env.REACT_APP_API_URL}/category/index`).then(function(response) {
-    //         setCategory(response.data.data);
-    //     });
-    // }
-
+    
     useEffect(() => {
         if(id){
             getDatas();

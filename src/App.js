@@ -72,6 +72,10 @@ function App() {
           <Route path="/sales/add" element={<SalesAdd />} />
           <Route path="/sales/edit/:id" element={<SalesAdd />} />
 
+          <Route path="/salesreturn" element={<SalesReturn />} />
+          <Route path="/salesreturn/add" element={<SalesReturnAdd />} />
+          <Route path="/salesreturn/edit/:id" element={<SalesReturnAdd />} />
+
           <Route path="/customer" element={<Customer />} />
           <Route path="/customer/add" element={<CustomerAdd />} />
           <Route path="/customer/edit/:id" element={<CustomerAdd />} />
@@ -81,9 +85,6 @@ function App() {
           <Route path="/category/edit/:id" element={<CategoryAdd />} />
 
           <Route path="/Stock_levels" element={<Stock_levels />} />
-
-          <Route path="/SalesReturn" element={<SalesReturn />} />
-          <Route path="/SalesReturnAdd" element={<SalesReturnAdd />} />
 
           <Route path="/PurchaseReturn" element={<PurchaseReturn />} />
           <Route path="/PurchaseReturnAdd" element={<PurchaseReturnAdd />} />
