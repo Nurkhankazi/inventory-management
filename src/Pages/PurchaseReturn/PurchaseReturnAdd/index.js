@@ -5,8 +5,8 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function PurchaseAdd() {
-    const [inputs, setInputs] = useState({id:'',purchase_date:'',supplier_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
+function PurchaseReturnAdd() {
+    const [inputs, setInputs] = useState({id:'',purchasereturn_date:'',supplier_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
     const [items, setItems] = useState([]);
     const [spuuliers, setSuppliers] = useState([]);
     const [cartitems, setCartItems] = useState([]);
@@ -39,7 +39,7 @@ function PurchaseAdd() {
       }    
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/purchase/${id}`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/purchasereturn/${id}`).then(function(response) {
             setInputs(response.data.data);
         });
     }
@@ -137,7 +137,7 @@ function PurchaseAdd() {
         }
         
         try{
-            let apiurl=`/purchase/create`;//api from laravel
+            let apiurl=`/purchasereturn/create`;//api from laravel
             
             
             let response= await axios({
@@ -146,7 +146,7 @@ function PurchaseAdd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: obj
             });
-            navigate('/purchase');// route from app.js
+            navigate('/purchasereturn');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -189,8 +189,8 @@ function PurchaseAdd() {
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
-                                                    <label htmlFor="purchase_date">date</label>
-                                                    <input type="date" id="purchase_date" className="form-control" defultValue={inputs.purchase_date} name="purchase_date" onChange={handleChange} />
+                                                    <label htmlFor="purchasereturn_date">date</label>
+                                                    <input type="date" id="purchasereturn_date" className="form-control" defultValue={inputs.purchasereturn_date} name="purchasereturn_date" onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -275,4 +275,4 @@ function PurchaseAdd() {
   )
 }
 
-export default PurchaseAdd
+export default PurchaseReturnAdd

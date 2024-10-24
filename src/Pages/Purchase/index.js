@@ -25,7 +25,7 @@ function Purchase() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Purchase list</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Purchase Report</h1>
                     </div>
                     
                 </div>

@@ -10,12 +10,12 @@ function SalesReturn() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/sales`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/salesreturn`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/sales/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/salesreturn/${id}`).then(function(response){
             getDatas();
         });
     }  
@@ -35,7 +35,7 @@ function SalesReturn() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Sales</h4>
+                            <h4 className="card-title">All Sales Return</h4>
                             <Link to={'/salesreturn/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">

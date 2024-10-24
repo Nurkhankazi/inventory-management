@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import Dashboard from './pages/Dashboard';
+
 import Products from './pages/Products';
 import ProductsAdd from './pages/Products/ProductsAdd';
-
-import Order from './pages/Order';
-import OrderAdd from './pages/Order/OrderAdd';
 
 import Customer from './pages/Customer';
 import CustomerAdd from './pages/Customer/CustomerAdd';
@@ -12,22 +10,20 @@ import CustomerAdd from './pages/Customer/CustomerAdd';
 import Category from './pages/Category';
 import CategoryAdd from './pages/Category/CategoryAdd';
 
-import Order_history from './pages/Order_history';
 import Suppliers from './pages/Suppliers';
 import SuppliersAdd from './pages/Suppliers/SuppliersAdd';
 
 import Stock_levels from './pages/Stock_levels';
-import Stock_Adjustment from './pages/Stock_Adjustment';
+
 import User_Add from './pages/User_Add';
 import User_list from './pages/User_list';
-import Seles_report from './pages/Seles_report';
-import Supplier_reports from './pages/Supplier_reports';
 
 import Purchase from './pages/Purchase';
 import PurchaseAdd from './pages/Purchase/PurchaseAdd';
 
 import Sales from './pages/Sales';
 import SalesAdd from './pages/Sales/SalesAdd';
+import SalesPay from './pages/Sales/SalesPay';
 
 import SalesReturn from './pages/SalesReturn';
 import SalesReturnAdd from './pages/SalesReturn/SalesReturnAdd';
@@ -55,11 +51,6 @@ function App() {
           <Route path="/products/add" element={<ProductsAdd />} />
           <Route path="/products/edit/:id" element={<ProductsAdd />} />
 
-          <Route path="/order" element={<Order />} />
-          <Route path="/order/add" element={<OrderAdd />} />
-          <Route path="/order/edit/:id" element={<OrderAdd />} />
-          <Route path="/Order_history" element={<Order_history />} />
-
           <Route path="/suppliers" element={<Suppliers />} />
           <Route path="/suppliers/add" element={<SuppliersAdd />} />
           <Route path="/suppliers/edit/:id" element={<SuppliersAdd />} />
@@ -68,9 +59,14 @@ function App() {
           <Route path="/purchase/add" element={<PurchaseAdd />} />
           <Route path="/purchase/edit/:id" element={<PurchaseAdd />} />
 
+          <Route path="/purchasereturn" element={<PurchaseReturn />} />
+          <Route path="/purchasereturn/add" element={<PurchaseReturnAdd />} />
+          <Route path="/purchasereturn/edit/:id" element={<PurchaseReturnAdd />} />
+
           <Route path="/sales" element={<Sales />} />
           <Route path="/sales/add" element={<SalesAdd />} />
           <Route path="/sales/edit/:id" element={<SalesAdd />} />
+          <Route path="/sales/pay/:id" element={<SalesPay />} />
 
           <Route path="/salesreturn" element={<SalesReturn />} />
           <Route path="/salesreturn/add" element={<SalesReturnAdd />} />
@@ -89,12 +85,9 @@ function App() {
           <Route path="/PurchaseReturn" element={<PurchaseReturn />} />
           <Route path="/PurchaseReturnAdd" element={<PurchaseReturnAdd />} />
           
-          <Route path="/Stock_Adjustment" element={<Stock_Adjustment />} />
           <Route path="/User_Add" element={<User_Add />} />
           <Route path="/User_list" element={<User_list />} />
-          <Route path="/Seles_report" element={<Seles_report />} />
-          <Route path="/Supplier_reports" element={<Supplier_reports />} />
-
+          
           <Route path= {"/"} element={
             <Protected  isSignedIn= {isSignedIn} >
               <Dashboard /> 

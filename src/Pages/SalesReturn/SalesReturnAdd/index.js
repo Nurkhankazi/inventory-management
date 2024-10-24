@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function SalesReturnAdd() {
-    const [inputs, setInputs] = useState({id:'',sales_date:'',customer_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
+    const [inputs, setInputs] = useState({id:'',salesreturn_date:'',customer_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
     const [items, setItems] = useState([]);
     const [customer, setCustomer] = useState([]);
     const [cartitems, setCartItems] = useState([]);
@@ -137,7 +137,7 @@ function SalesReturnAdd() {
         }
         
         try{
-            let apiurl=`/sales/create`;//api from laravel
+            let apiurl=`/salesreturn/create`;//api from laravel
             
             
             let response= await axios({
@@ -189,8 +189,8 @@ function SalesReturnAdd() {
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
-                                                    <label htmlFor="sales_date">date</label>
-                                                    <input type="date" id="sales_date" className="form-control" defultValue={inputs.sales_date} name="sales_date" onChange={handleChange} />
+                                                    <label htmlFor="salesreturn_date">date</label>
+                                                    <input type="date" id="salesreturn_date" className="form-control" defultValue={inputs.salesreturn_date} name="salesreturn_date" onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">

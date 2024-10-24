@@ -3,19 +3,19 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Purchase() {
+function PurchaseReturn() {
     const[data, setData]=useState([]);
     useEffect(() => {
         getDatas();
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/purchase`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/purchasereturn`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/purchase/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/purchasereturn/${id}`).then(function(response){
             getDatas();
         });
     }  
@@ -25,7 +25,7 @@ function Purchase() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Purchase Return list</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Purchase Return View</h1>
                     </div>
                     
                 </div>
@@ -35,8 +35,8 @@ function Purchase() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Purchase</h4>
-                            <Link to={'/purchase/add'} className='btn btn-primary float-right' >Add New</Link>
+                            <h4 className="card-title">All Return Purchase</h4>
+                            <Link to={'/purchasereturn/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
                             <div className="table-responsive">
@@ -60,7 +60,7 @@ function Purchase() {
                                             <td>{d.taxamt}</td>
                                             <td>{d.gtotal}</td>
                                             <td>
-                                                <Link to={`/purchase/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/purchasereturn/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -77,4 +77,4 @@ function Purchase() {
   )
 }
 
-export default Purchase
+export default PurchaseReturn

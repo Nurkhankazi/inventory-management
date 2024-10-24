@@ -25,7 +25,7 @@ function Sales() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Sales list</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Sales Report</h1>
                     </div>
                     
                 </div>
@@ -48,6 +48,8 @@ function Sales() {
                                             <th>Discount</th>
                                             <th>Tax</th>
                                             <th>Grand Total</th>
+                                            <th>Due Amount</th>
+                                            <th>Satus</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -59,8 +61,11 @@ function Sales() {
                                             <td>{d.discountamt}</td>
                                             <td>{d.taxamt}</td>
                                             <td>{d.gtotal}</td>
+                                            <td>{d.gtotal - d.payment_sum_amount}</td>
+                                            <td>{d.payment_sum_amount==d.gtotal?`Paid`:`Partial Paid`}</td>
                                             <td>
-                                                <Link to={`/sales/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/sales/pay/${d.id}`} className='btn btn-info' >Pay Due</Link>
+                                                {/* <Link to={`/sales/edit/${d.id}`} className='btn btn-info' >Edit</Link> */}
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
