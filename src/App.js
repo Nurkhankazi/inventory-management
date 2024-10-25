@@ -20,6 +20,8 @@ import User_list from './pages/User_list';
 
 import Purchase from './pages/Purchase';
 import PurchaseAdd from './pages/Purchase/PurchaseAdd';
+import PurchasePay from './pages/Purchase/PurchasePay';
+
 
 import Sales from './pages/Sales';
 import SalesAdd from './pages/Sales/SalesAdd';
@@ -58,6 +60,8 @@ function App() {
           <Route path="/purchase" element={<Purchase />} />
           <Route path="/purchase/add" element={<PurchaseAdd />} />
           <Route path="/purchase/edit/:id" element={<PurchaseAdd />} />
+          <Route path="/purchase/pay/:id" element={<PurchasePay />} />
+
 
           <Route path="/purchasereturn" element={<PurchaseReturn />} />
           <Route path="/purchasereturn/add" element={<PurchaseReturnAdd />} />

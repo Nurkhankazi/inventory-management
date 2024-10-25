@@ -48,6 +48,8 @@ function Purchase() {
                                             <th>Discount</th>
                                             <th>Tax</th>
                                             <th>Grand Total</th>
+                                            <th>Due Amount</th>
+                                            <th>Satus</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -59,8 +61,10 @@ function Purchase() {
                                             <td>{d.discountamt}</td>
                                             <td>{d.taxamt}</td>
                                             <td>{d.gtotal}</td>
+                                            <td>{d.gtotal - d.payment_sum_amount}</td>
+                                            <td>{d.payment_sum_amount==d.gtotal?`Paid`:`Partial Paid`}</td>
                                             <td>
-                                                <Link to={`/purchase/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/purchase/pay/${d.id}`} className='btn btn-info' >Pay Due</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>

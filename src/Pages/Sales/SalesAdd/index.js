@@ -259,7 +259,7 @@ function SalesAdd() {
                                                 </div>
                                             </div>
 {/* Payment type */}
-                                            <div className='row'> 
+                                            <div className='row' style={{ fontWeight: 'bold' }}> 
                                                 <div className='col-sm-6'>
                                                     <div className="form-group">
                                                         <label for="pay_type">Pay Type</label>
@@ -280,7 +280,7 @@ function SalesAdd() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className='row'> 
+                                            <div className='row' style={{ fontWeight: 'bold' }}> 
                                                 <div className='col-sm-4'>
                                                     <div className="form-group">
                                                         <label for="bank_name">Bank Name</label>
@@ -303,8 +303,8 @@ function SalesAdd() {
 {/* Payment type */}
                                             <div className='row mt-3'> 
                                                 <div className="col-12 d-flex justify-content-end">
-                                                    <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
-                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
+                                                    <button type="submit" className="btn btn-primary mr-1 mb-1" style={{ backgroundColor: '#007bff', borderColor: '#007bff', borderRadius: '5px' }}>Submit</button>
+                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1" style={{ backgroundColor: '#f8f9fa', borderColor: '#ced4da', borderRadius: '5px' }}>Reset</button>
                                                 </div>
                                             </div>
                                         </div>
