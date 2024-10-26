@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../../components/axios';
 import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function Addproduct() {
+function ProductsAdd() {
     const [inputs, setInputs] = useState({id:'',name:'',description:'',quantity:'',price:'',category_id:''});
     const [category, setCategory] = useState([]);
     const navigate=useNavigate();
+    const [selectedFiles, setSelectedFiles] = useState([]); // For photo
     const {id} = useParams();
 
     const getCategory= async(e) =>{
@@ -30,6 +31,11 @@ function Addproduct() {
         getCategory();
     }, []);
 
+    // Handle file input for photos
+    const handleFileChange = (e) => {
+        setSelectedFiles(e.target.files);
+    }
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -39,10 +45,20 @@ function Addproduct() {
     const handleSubmit = async(e) => {
         e.preventDefault();
         console.log(inputs)
+
+        const formData = new FormData();
+        // Append photos to formData
+        for (let i = 0; i < selectedFiles.length; i++) {
+            formData.append('files[]', selectedFiles[i]);
+        }
+        // Append other form inputs to formData
+        for (const product in inputs) {
+            formData.append(product, inputs[product]);
+        }
         
         try{
             let apiurl='';
-            if(inputs.id!=''){
+            if(inputs.id !==''){
                 apiurl=`/product/edit/${inputs.id}`;//api from laravel
             }else{
                 apiurl=`/product/create`;//api from laravel
@@ -52,7 +68,11 @@ function Addproduct() {
                 method: 'post',
                 responsiveTYpe: 'json',
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
-                data: inputs
+
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                }
             });
             navigate('/products');// route from app.js
         } 
@@ -118,6 +138,12 @@ function Addproduct() {
                                                     }
                                                     </div>
                                                 </div>
+                                                <div className="col-12">
+                                                    <div className="form-group">
+                                                    <label for="email-id-vertical">photo</label>
+                                                    <input type="file" id="photo" className="form-control" defaultValue={inputs.photo} name="photo" multiple onChange={handleFileChange} />
+                                                    </div>
+                                                </div>
                                                 <div className="col-12 d-flex justify-content-end">
                                                     <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
                                                     <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
@@ -137,4 +163,4 @@ function Addproduct() {
   )
 }
 
-export default Addproduct
+export default ProductsAdd

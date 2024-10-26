@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../components/axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
@@ -48,6 +48,7 @@ function Products() {
                                             <th>quantity</th>
                                             <th>price</th>
                                             <th>category</th>
+                                            <th>photo</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -60,6 +61,12 @@ function Products() {
                                             <td>{d.quantity}</td>
                                             <td>{d.price}</td>
                                             <td>{d.category?.name}</td>
+                                            <td>
+                                                {d?.photo?.split(',').map((src, i) => (
+                                                <img src={`${process.env.REACT_APP_BACKEND_URL}/productsadd/${src}`} alt="No photo" width="100%" height="50%" />
+                                                ))
+                                                }
+                                            </td>
                                             <td>
                                                 <Link to={`/products/edit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
