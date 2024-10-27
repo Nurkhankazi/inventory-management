@@ -63,7 +63,7 @@ function Products() {
                                             <td>{d.category?.name}</td>
                                             <td>
                                                 {d?.photo?.split(',').map((src, i) => (
-                                                <img src={`${process.env.REACT_APP_BACKEND_URL}/productsadd/${src}`} alt="No photo" width="100%" height="50%" />
+                                                <img src={`${process.env.REACT_APP_BACKEND_URL}/productsadd/${src}`} alt="No photo" width="50px" />
                                                 ))
                                                 }
                                             </td>
