@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
 function SalesReturnAdd() {
-    const [inputs, setInputs] = useState({id:'',salesreturn_date:'',customer_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:''});
+    const [inputs, setInputs] = useState({id:'',salesreturn_date:'',customer_id:'',total:'',discount:'',tax:'',gtotal:'',discountamt:'',taxamt:'',check_date:'',bank_name:'',check_number:''});
     const [items, setItems] = useState([]);
     const [customer, setCustomer] = useState([]);
     const [cartitems, setCartItems] = useState([]);
@@ -152,6 +152,10 @@ function SalesReturnAdd() {
             console.log(e);
         }
     }
+    const payType=[
+                    {id:1,name:"Cash"},
+                    {id:2,name:"Bank"}
+                ]
 
   return (
     <AdminLayout>
@@ -159,9 +163,8 @@ function SalesReturnAdd() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Sales Return</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Add New SalesReturn</h1>
                     </div>
-                   
                 </div>
             </div>
 
@@ -189,8 +192,8 @@ function SalesReturnAdd() {
                                                 </div>
                                                 <div className="col-6">
                                                     <div className="form-group">
-                                                    <label htmlFor="salesreturn_date">date</label>
-                                                    <input type="date" id="salesreturn_date" className="form-control" defultValue={inputs.salesreturn_date} name="salesreturn_date" onChange={handleChange} />
+                                                        <label htmlFor="salesreturn_date">date</label>
+                                                        <input type="date" id="salesreturn_date" className="form-control" defultValue={inputs.salesreturn_date} name="salesreturn_date" onChange={handleChange} />
                                                     </div>
                                                 </div>
                                                 <div className="col-12">
@@ -255,10 +258,53 @@ function SalesReturnAdd() {
                                                     </table>
                                                 </div>
                                             </div>
-                                            <div className='row'> 
+{/* Payment type */}
+                                            <div className='row' style={{ fontWeight: 'bold' }}> 
+                                                <div className='col-sm-6'>
+                                                    <div className="form-group">
+                                                        <label for="pay_type">Pay Type</label>
+                                                        {payType.length > 0 && 
+                                                            <select className="form-control" id="pay_type" name='pay_type' defaultValue={inputs.pay_type} onChange={handleChange}>
+                                                                <option value="">Select Pay Type</option>
+                                                                {payType.map((d, key) =>
+                                                                    <option value={d.id}>{d.name}</option>
+                                                                )}
+                                                            </select>
+                                                        }
+                                                    </div>
+                                                </div>
+                                                <div className='col-sm-6'>
+                                                    <div className="form-group">
+                                                        <label for="amount">Amount</label>
+                                                        <input type="text" id="amount" className="form-control" defultValue={inputs.amount} name="amount" onChange={handleChange} />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='row' style={{ fontWeight: 'bold' }}> 
+                                                <div className='col-sm-4'>
+                                                    <div className="form-group">
+                                                        <label for="bank_name">Bank Name</label>
+                                                        <input type="text" id="bank_name" className="form-control" defultValue={inputs.bank_name} name="bank_name" onChange={handleChange} />
+                                                    </div>
+                                                </div>
+                                                <div className='col-sm-4'>
+                                                    <div className="form-group">
+                                                        <label for="check_number">Check Number</label>
+                                                        <input type="text" id="check_number" className="form-control" defultValue={inputs.check_number} name="check_number" onChange={handleChange} />
+                                                    </div>
+                                                </div>
+                                                <div className='col-sm-4'>
+                                                    <div className="form-group">
+                                                        <label for="check_date">Check Date</label>
+                                                        <input type="date" id="check_date" className="form-control" defultValue={inputs.check_date} name="check_date" onChange={handleChange} />
+                                                    </div>
+                                                </div>
+                                            </div>
+{/* Payment type */}
+                                            <div className='row mt-3'> 
                                                 <div className="col-12 d-flex justify-content-end">
-                                                    <button type="submit" className="btn btn-primary mr-1 mb-1">Submit</button>
-                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1">Reset</button>
+                                                    <button type="submit" className="btn btn-primary mr-1 mb-1" style={{ backgroundColor: '#007bff', borderColor: '#007bff', borderRadius: '5px' }}>Submit</button>
+                                                    <button type="reset" className="btn btn-light-secondary mr-1 mb-1" style={{ backgroundColor: '#f8f9fa', borderColor: '#ced4da', borderRadius: '5px' }}>Reset</button>
                                                 </div>
                                             </div>
                                         </div>

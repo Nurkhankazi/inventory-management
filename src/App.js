@@ -29,6 +29,7 @@ import SalesPay from './pages/Sales/SalesPay';
 
 import SalesReturn from './pages/SalesReturn';
 import SalesReturnAdd from './pages/SalesReturn/SalesReturnAdd';
+import SalesReturnPay from './pages/SalesReturn/SalesReturnPay';
 
 import PurchaseReturn from './pages/PurchaseReturn';
 import PurchaseReturnAdd from './pages/PurchaseReturn/PurchaseReturnAdd';
@@ -75,6 +76,7 @@ function App() {
           <Route path="/salesreturn" element={<SalesReturn />} />
           <Route path="/salesreturn/add" element={<SalesReturnAdd />} />
           <Route path="/salesreturn/edit/:id" element={<SalesReturnAdd />} />
+          <Route path="/salesreturn/pay/:id" element={<SalesReturnPay />} />
 
           <Route path="/customer" element={<Customer />} />
           <Route path="/customer/add" element={<CustomerAdd />} />

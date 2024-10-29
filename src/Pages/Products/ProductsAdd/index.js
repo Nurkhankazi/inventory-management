@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 
 function ProductsAdd() {
     const [inputs, setInputs] = useState({id:'',name:'',description:'',quantity:'',price:'',category_id:''});
-    const [category, setCategory] = useState([]);
+    const [category, setCategory] = useState([]); //category join
     const navigate=useNavigate();
     const [selectedFiles, setSelectedFiles] = useState([]); // For photo
     const {id} = useParams();
