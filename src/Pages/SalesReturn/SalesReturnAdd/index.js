@@ -163,7 +163,7 @@ function SalesReturnAdd() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Add New SalesReturn</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Add Sales Return</h1>
                     </div>
                 </div>
             </div>

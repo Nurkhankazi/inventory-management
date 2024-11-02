@@ -5,19 +5,19 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function SalesReturnPay() {
+function PurchaseReturnPay() {
     const {id} = useParams();
     const [inputs, setInputs] = useState({check_date:'',bank_name:'',check_number:''});
-    const [salesreturnData, setSalesReuturnData] = useState({check_date:'',bank_name:'',check_number:''});
+    const [purchasereturnData, setPurchaseReturnData] = useState({check_date:'',bank_name:'',check_number:''});
     const navigate=useNavigate();
 
     function getDatas(){
         //api from laravel
-        axios.get(`${process.env.REACT_APP_API_URL}/salesreturn/${id}`).then(function(response) {
-            setSalesReuturnData(response.data.data);
+        axios.get(`${process.env.REACT_APP_API_URL}/purchasereturn/${id}`).then(function(response) {
+            setPurchaseReturnData(response.data.data);
         });
     }
-
+    
     useEffect(() => {
         if(id){
             getDatas();
@@ -39,7 +39,7 @@ function SalesReturnPay() {
         }
         
         try{
-            let apiurl=`/salesreturn/payment/${id}`;//api from laravel
+            let apiurl=`/purchasereturn/payment/${id}`;//api from laravel
             
             let response= await axios({
                 method: 'post',
@@ -47,7 +47,7 @@ function SalesReturnPay() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: obj
             });
-            navigate('/salesreturn');// route from app.js
+            navigate('/PurchaseReturn');// route from app.js
         } 
         catch(e){
             console.log(e);
@@ -64,7 +64,7 @@ function SalesReturnPay() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Sales Return Payment</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Purchase Return Payment</h1>
                     </div>
                 </div>
             </div>
@@ -79,8 +79,8 @@ function SalesReturnPay() {
                                         <div className="form-body">
                                             <div className='row'> 
                                                 <div className="col-6 offset-6 d-flex justify-content-end">
-                                                    {salesreturnData.gtotal > 0 &&
-                                                        <h3>Due Amount: {salesreturnData.gtotal - salesreturnData.payment_sum_amount}</h3>
+                                                    {purchasereturnData.gtotal > 0 &&
+                                                        <h3>Due Amount: {purchasereturnData.gtotal - purchasereturnData.payment_sum_amount}</h3>
                                                     }
                                                 </div>
                                             </div>
@@ -148,4 +148,4 @@ function SalesReturnPay() {
   )
 }
 
-export default SalesReturnPay
+export default PurchaseReturnPay

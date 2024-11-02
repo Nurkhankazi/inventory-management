@@ -25,7 +25,7 @@ function PurchaseReturn() {
             <div className="page-title">
                 <div className="row">
                     <div className="col-12 col-md-12 order-md-1 order-last">
-                        <br/><h1 style={{textAlign: 'center'}}>Purchase Return View</h1>
+                        <br/><h1 style={{textAlign: 'center'}}>Purchase Return Report</h1>
                     </div>
                     
                 </div>
@@ -35,7 +35,7 @@ function PurchaseReturn() {
                 <div className="col-12">
                     <div className="card">
                         <div className="card-header">
-                            <h4 className="card-title">All Return Purchase</h4>
+                            <h4 className="card-title">All Purchase Return</h4>
                             <Link to={'/purchasereturn/add'} className='btn btn-primary float-right' >Add New</Link>
                         </div>
                         <div className="card-content">
@@ -48,6 +48,8 @@ function PurchaseReturn() {
                                             <th>Discount</th>
                                             <th>Tax</th>
                                             <th>Grand Total</th>
+                                            <th>Due Amount</th>
+                                            <th>Satus</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -59,8 +61,10 @@ function PurchaseReturn() {
                                             <td>{d.discountamt}</td>
                                             <td>{d.taxamt}</td>
                                             <td>{d.gtotal}</td>
+                                            <td>{d.gtotal - d.payment_sum_amount}</td>
+                                            <td>{d.payment_sum_amount==d.gtotal?`Paid`:`Partial Paid`}</td>
                                             <td>
-                                                <Link to={`/purchasereturn/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                                <Link to={`/purchasereturn/pay/${d.id}`} className='btn btn-info' >Pay Due</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
