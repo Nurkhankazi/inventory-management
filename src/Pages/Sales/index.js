@@ -64,9 +64,10 @@ function Sales() {
                                             <td>{d.gtotal - d.payment_sum_amount}</td>
                                             <td>{d.payment_sum_amount==d.gtotal?`Paid`:`Partial Paid`}</td>
                                             <td>
-                                                <Link to={`/sales/pay/${d.id}`} className='btn btn-info' >Pay Due</Link>
+                                                <Link to={`/sales/pay/${d.id}`} className='btn btn-info' >Pay Due</Link> <br/>
                                                 {/* <Link to={`/sales/edit/${d.id}`} className='btn btn-info' >Edit</Link> */}
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                                                <Link to={`/invoice/${d.id}`} className='btn btn-info' >Invoice</Link>
                                             </td>
                                         </tr>
                                     )}

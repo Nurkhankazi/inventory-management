@@ -147,6 +147,7 @@ function SalesAdd() {
                 data: obj
             });
             navigate('/sales');// route from app.js
+            // navigate(`/Invoice/${response.data.data.id}`);
         } 
         catch(e){
             console.log(e);

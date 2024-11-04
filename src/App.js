@@ -31,6 +31,8 @@ import SalesReturn from './pages/SalesReturn';
 import SalesReturnAdd from './pages/SalesReturn/SalesReturnAdd';
 import SalesReturnPay from './pages/SalesReturn/SalesReturnPay';
 
+import Invoice from './pages/Invoice';
+
 import PurchaseReturn from './pages/PurchaseReturn';
 import PurchaseReturnAdd from './pages/PurchaseReturn/PurchaseReturnAdd';
 import PurchaseReturnPay from './pages/PurchaseReturn/PurchaseReturnPay';
@@ -74,6 +76,9 @@ function App() {
           <Route path="/sales/add" element={<SalesAdd />} />
           <Route path="/sales/edit/:id" element={<SalesAdd />} />
           <Route path="/sales/pay/:id" element={<SalesPay />} />
+
+          <Route path="/Invoice" element={<Invoice />} />
+          <Route path="/Invoice/:salesId" element={<Invoice />} />
 
           <Route path="/salesreturn" element={<SalesReturn />} />
           <Route path="/salesreturn/add" element={<SalesReturnAdd />} />
