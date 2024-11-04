@@ -122,7 +122,7 @@ function Invoice() {
                             </tr>
                         </tbody>
                     </table>
-                </section>
+                </section><br/>
 
                 {/* Sales Summary Table */}
                 <section className="sales-summary">
@@ -155,29 +155,20 @@ function Invoice() {
                             </tr>
                         </tbody>
                     </table>
-                </section><br/>
-                <div className="invoice-contact clearfix text-center">
-                  <div className="row g-0">
-                    <div className="col-sm-12">
-                      <div className="contact-info">
-                        <a href="#">
-                          <i className="fa fa-phone"></i>Phone Nurmber: 01572378254,
-                        </a>
-                        <a href="#">
-                          <i className="fa fa-envelope"></i> Gmail: inventory123@gmail.com,
-                        </a>
-                        <a href="#" className="mr-0 d-none-580">
-                          <i className="fa fa-map-marker"></i> Address: Chattogram, Bangladesh
-                        </a>
-                      </div>
-                    </div>
+                </section>
+                  <div className="contact-info text-center">
+                     <div>
+                         <a href="tel:01572378254">📞 Phone: 01572378254</a>
+                        <a href="mailto:inventory123@gmail.com">📧 Email: inventory123@gmail.com</a>
+                         <span>📍 Address: Chattogram, Bangladesh</span>
+                     </div>
                   </div>
-                </div><br/>
-                <div className="invoice-btn-section clearfix d-print-none text-center">
-                  <button onClick={() => window.print()} className="btn btn-lg btn-print">
-                    <i className="fa fa-print"></i> Print Invoice
-                  </button>
-                </div>
+
+                  <div className="print-section text-center">
+                     <button onClick={() => window.print()} className="btn-print">
+                       🖨️ Print Invoice
+                   </button>
+                  </div>
             </div>
         
       </div>
