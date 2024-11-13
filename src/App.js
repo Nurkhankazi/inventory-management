@@ -31,7 +31,7 @@ import SalesReturn from './pages/SalesReturn';
 import SalesReturnAdd from './pages/SalesReturn/SalesReturnAdd';
 import SalesReturnPay from './pages/SalesReturn/SalesReturnPay';
 
-import Invoice from './pages/Invoice';
+import Invoice from './pages/Sales/Invoice';
 
 import PurchaseReturn from './pages/PurchaseReturn';
 import PurchaseReturnAdd from './pages/PurchaseReturn/PurchaseReturnAdd';
