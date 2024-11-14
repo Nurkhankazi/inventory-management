@@ -66,6 +66,7 @@ function Purchase() {
                                             <td>
                                                 <Link to={`/purchase/pay/${d.id}`} className='btn btn-info' >Pay Due</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                                                <Link to={`/purchaseinvoice/${d.id}`} className='btn btn-info' >Invoice</Link>
                                             </td>
                                         </tr>
                                     )}
